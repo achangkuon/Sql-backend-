@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "secondary-fixed-dim": "#c0c7d6",
+              "secondary-fixed": "#dce2f3",
+              "surface-container-highest": "#e1e1f2",
+              "on-secondary-fixed-variant": "#404754",
+              "surface-bright": "#fbf8ff",
+              "secondary": "#585f6c",
+              "tertiary-fixed-dim": "#ffb4a4",
+              "on-error": "#ffffff",
+              "primary-fixed": "#dae1ff",
+              "surface-container-lowest": "#ffffff",
+              "surface-container-low": "#f3f2ff",
+              "on-tertiary-fixed-variant": "#8c1700",
+              "surface": "#fbf8ff",
+              "on-primary-container": "#fffeff",
+              "primary-fixed-dim": "#b3c5ff",
+              "tertiary-container": "#d63f20",
+              "on-surface": "#191b26",
+              "error-container": "#ffdad6",
+              "outline": "#727687",
+              "inverse-surface": "#2e303c",
+              "on-tertiary-container": "#fffeff",
+              "background": "#fbf8ff",
+              "tertiary-fixed": "#ffdad3",
+              "primary-container": "#1a6bff",
+              "surface-container-high": "#e7e7f7",
+              "inverse-on-surface": "#f0efff",
+              "on-primary-fixed-variant": "#003fa4",
+              "on-secondary": "#ffffff",
+              "on-primary": "#ffffff",
+              "surface-tint": "#0055d5",
+              "surface-container": "#edecfd",
+              "on-secondary-container": "#5e6572",
+              "surface-dim": "#d9d9e9",
+              "primary": "#0053d3",
+              "outline-variant": "#c2c6d8",
+              "on-primary-fixed": "#001849",
+              "on-surface-variant": "#424655",
+              "inverse-primary": "#b3c5ff",
+              "on-secondary-fixed": "#151c27",
+              "on-tertiary-fixed": "#3e0500",
+              "on-background": "#191b26",
+              "secondary-container": "#dce2f3",
+              "on-error-container": "#93000a",
+              "on-tertiary": "#ffffff",
+              "error": "#ba1a1a",
+              "surface-variant": "#e1e1f2",
+              "tertiary": "#b32606"
+            },
+            fontFamily: {
+              "headline": ["Inter", "sans-serif"],
+              "body": ["Inter", "sans-serif"],
+              "label": ["Inter", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .no-scrollbar::-webkit-scrollbar { display: none; }
+      .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+<style>
+      body {
+        min-height: max(884px, 100dvh);
+        font-weight: 500;
+      }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface antialiased">
+<!-- TopAppBar -->
+<header class="bg-[#F7F8FA] dark:bg-slate-900 flex justify-between items-center w-full px-6 py-4 fixed top-0 z-50">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center text-on-primary font-headline font-bold text-lg">
+                MT
+            </div>
+<h1 class="font-headline font-extrabold text-[#1A6BFF] tracking-tight text-xl">ServiTask</h1>
+</div>
+<div class="flex items-center gap-4">
+<button class="text-[#6B7280] dark:text-slate-400 hover:opacity-80 transition-opacity active:scale-95 duration-150">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+</div>
+</header>
+<main class="pt-24 pb-32 px-6 max-w-2xl mx-auto">
+<!-- Page Title & Tabs -->
+<div class="mb-4">
+<div class="flex justify-between items-end mb-6">
+<h2 class="font-headline font-bold text-3xl text-on-surface">Tareas</h2>
+<span class="font-label text-xs uppercase tracking-widest text-secondary font-bold">2 Pendientes</span>
+</div>
+<!-- Custom Switch/Pill Tab Component -->
+<div class="bg-surface-container-low p-1.5 rounded-2xl flex w-full">
+<button class="flex-1 py-2.5 rounded-xl text-secondary font-medium transition-all duration-200 hover:text-on-surface">
+                    EN CURSO
+                </button>
+<button class="flex-1 bg-surface-container-lowest py-2.5 rounded-xl text-primary font-bold shadow-sm transition-all duration-200">
+                    PASADAS
+                </button>
+</div>
+</div>
+<!-- Filter Bar -->
+<div class="flex gap-2 overflow-x-auto no-scrollbar pb-6 pt-2">
+<button class="flex items-center gap-1 bg-surface-container-low px-4 py-2 rounded-full text-sm font-medium text-on-surface border border-outline-variant/30 shrink-0">
+                Fecha
+                <span class="material-symbols-outlined text-sm leading-none" data-icon="keyboard_arrow_down">keyboard_arrow_down</span>
+</button>
+<button class="flex items-center gap-1 bg-surface-container-low px-4 py-2 rounded-full text-sm font-medium text-on-surface border border-outline-variant/30 shrink-0">
+                Monto
+                <span class="material-symbols-outlined text-sm leading-none" data-icon="keyboard_arrow_down">keyboard_arrow_down</span>
+</button>
+<button class="flex items-center gap-1 bg-surface-container-low px-4 py-2 rounded-full text-sm font-medium text-on-surface border border-outline-variant/30 shrink-0">
+                Categoría
+                <span class="material-symbols-outlined text-sm leading-none" data-icon="keyboard_arrow_down">keyboard_arrow_down</span>
+</button>
+</div>
+<!-- Section: Pasadas (Grouped by Month) -->
+<section>
+<div class="space-y-4">
+<!-- Past Task Card 1 -->
+<div class="bg-surface-container-lowest rounded-[20px] border-l-4 border-l-[#10B981] border-y border-r border-outline-variant/10 shadow-[0px_8px_20px_rgba(0,0,0,0.03)] flex p-5 gap-4">
+<!-- Left Side -->
+<div class="flex-1 min-w-0">
+<h4 class="font-medium text-lg text-on-surface truncate mb-1">Reparación Eléctrica</h4>
+<div class="flex items-center gap-1.5 text-secondary text-sm mb-3">
+<span class="material-symbols-outlined text-sm" data-icon="schedule">schedule</span>
+<span class="font-medium">Duración: 1h 15m</span>
+</div>
+<div class="flex flex-wrap gap-2">
+<span class="bg-surface-container p-1.5 px-3 rounded-lg text-[11px] font-medium text-secondary">12 Oct</span>
+<span class="bg-surface-container p-1.5 px-3 rounded-lg text-[11px] font-medium text-secondary">14:30</span>
+<span class="bg-surface-container p-1.5 px-3 rounded-lg text-[11px] font-medium text-secondary flex items-center gap-1">
+<span class="material-symbols-outlined text-xs" data-icon="location_on">location_on</span>
+                                Av. Reforma 456
+                            </span>
+</div>
+</div>
+<!-- Right Side -->
+<div class="flex flex-col items-end justify-between text-right shrink-0">
+<div>
+<p class="text-[10px] text-secondary font-medium uppercase tracking-wider mb-0.5">TOTAL RECAUDADO</p>
+<p class="font-bold text-lg text-[#10B981]">$120.50 USD</p>
+</div>
+<div class="flex items-center gap-2 mt-2">
+<span class="text-sm text-on-surface font-medium">Ana L.</span>
+<div class="w-8 h-8 rounded-full overflow-hidden border border-surface-container">
+<img alt="Ana L." class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAMJ7GdN_9ydKE0g8e7nnGTbiQeuHOS6XOEhwOh2oCHPHAC5eBzcGtPm1A-DP1MGuESSncjgCjZTvWhIImGZO-7UZYP0QMkMeF-JIOgaUoL8w6hBjgsKQN3IyBMUAV_nUElOZQxIdBbTVjGiv5bj98e4MCAmrDM3HUX0eAqe2HFoofBV3_jN7mHaNMmgA-zIpqTqmNzdbFWUn-wFBsKMlLhKPMsV4wuSBgSjQLFSxqwTNLuNzzEZzStBXuZI7R1hVc5ZXrZfQ8tPhFN"/>
+</div>
+</div>
+</div>
+</div>
+<!-- Past Task Card 2 -->
+<div class="bg-surface-container-lowest rounded-[20px] border-l-4 border-l-[#10B981] border-y border-r border-outline-variant/10 shadow-[0px_8px_20px_rgba(0,0,0,0.03)] flex p-5 gap-4">
+<!-- Left Side -->
+<div class="flex-1 min-w-0">
+<h4 class="font-medium text-lg text-on-surface truncate mb-1">Limpieza Profunda</h4>
+<div class="flex items-center gap-1.5 text-secondary text-sm mb-3">
+<span class="material-symbols-outlined text-sm" data-icon="schedule">schedule</span>
+<span class="font-medium">Duración: 2h 15m</span>
+</div>
+<div class="flex flex-wrap gap-2">
+<span class="bg-surface-container p-1.5 px-3 rounded-lg text-[11px] font-medium text-secondary">05 Oct</span>
+<span class="bg-surface-container p-1.5 px-3 rounded-lg text-[11px] font-medium text-secondary">09:00</span>
+<span class="bg-surface-container p-1.5 px-3 rounded-lg text-[11px] font-medium text-secondary flex items-center gap-1">
+<span class="material-symbols-outlined text-xs" data-icon="location_on">location_on</span>
+                                Santa Fe, Edif. A
+                            </span>
+</div>
+</div>
+<!-- Right Side -->
+<div class="flex flex-col items-end justify-between text-right shrink-0">
+<div>
+<p class="text-[10px] text-secondary font-medium uppercase tracking-wider mb-0.5">TOTAL RECAUDADO</p>
+<p class="font-bold text-lg text-[#10B981]">$200.00 USD</p>
+</div>
+<div class="flex items-center gap-2 mt-2">
+<span class="text-sm text-on-surface font-medium">Carlos M.</span>
+<div class="w-8 h-8 rounded-full overflow-hidden border border-surface-container">
+<img alt="Carlos M." class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBc8vsyDNP_R9aUAA6VBzEP932fe9MjJcsJOjPK9fiH19oNIcKMc2tw8psoeYz-6j8tJgs_l9rbq6qajPTjP_HzOVA4uyO4DTWzwBpyTjsRBBPE5jKKayFaoBYBMIz23phKOjlbR9nXFxEzBbIr9OyYMZEoPdeSgZoOu1NmCWbN4KrAFAflXnTQWQdMuy2LWcwtirg1haI_8bNVfxR3-AnF2f4BuNWHqJETIbrKJpnNCTiTJUJtVt3RzpPGjjE4oO58NOH4vlsIUjXM"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="bg-white/70 dark:bg-slate-900/70 backdrop-blur-md fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-3 shadow-[0px_-10px_30px_rgba(13,15,26,0.04)] rounded-t-2xl border-t border-slate-100 dark:border-slate-800">
+<a class="flex flex-col items-center justify-center text-[#6B7280] dark:text-slate-500 hover:text-[#1A6BFF] dark:hover:text-blue-300 tap-highlight-transparent active:scale-90 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-body font-medium text-[10px] tracking-wide uppercase mt-1">Inicio</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#1A6BFF] dark:text-blue-400 font-bold scale-110 transition-transform tap-highlight-transparent active:scale-90" href="#">
+<span class="material-symbols-outlined" data-icon="assignment" style="font-variation-settings: 'FILL' 1;">assignment</span>
+<span class="font-body font-bold text-[10px] tracking-wide uppercase mt-1">Tareas</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#6B7280] dark:text-slate-500 hover:text-[#1A6BFF] dark:hover:text-blue-300 tap-highlight-transparent active:scale-90 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="calendar_today">calendar_today</span>
+<span class="font-body font-medium text-[10px] tracking-wide uppercase mt-1">Calendario</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#6B7280] dark:text-slate-500 hover:text-[#1A6BFF] dark:hover:text-blue-300 tap-highlight-transparent active:scale-90 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="storefront">storefront</span>
+<span class="font-body font-medium text-[10px] tracking-wide uppercase mt-1">Negocio</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#6B7280] dark:text-slate-500 hover:text-[#1A6BFF] dark:hover:text-blue-300 tap-highlight-transparent active:scale-90 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-body font-medium text-[10px] tracking-wide uppercase mt-1">Perfil</span>
+</a>
+</nav>
+</body></html>

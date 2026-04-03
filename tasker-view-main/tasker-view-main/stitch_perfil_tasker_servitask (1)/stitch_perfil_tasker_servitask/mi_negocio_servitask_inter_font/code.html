@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+
+<html lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              colors: {
+                "secondary-fixed-dim": "#c0c7d6",
+                "secondary-fixed": "#dce2f3",
+                "surface-container-highest": "#e1e1f2",
+                "on-secondary-fixed-variant": "#404754",
+                "surface-bright": "#fbf8ff",
+                "secondary": "#585f6c",
+                "tertiary-fixed-dim": "#ffb4a4",
+                "on-error": "#ffffff",
+                "primary-fixed": "#dae1ff",
+                "surface-container-lowest": "#ffffff",
+                "surface-container-low": "#f3f2ff",
+                "on-tertiary-fixed-variant": "#8c1700",
+                "surface": "#fbf8ff",
+                "on-primary-container": "#fffeff",
+                "primary-fixed-dim": "#b3c5ff",
+                "tertiary-container": "#d63f20",
+                "on-surface": "#191b26",
+                "error-container": "#ffdad6",
+                "outline": "#727687",
+                "inverse-surface": "#2e303c",
+                "on-tertiary-container": "#fffeff",
+                "background": "#fbf8ff",
+                "tertiary-fixed": "#ffdad3",
+                "primary-container": "#1a6bff",
+                "surface-container-high": "#e7e7f7",
+                "inverse-on-surface": "#f0efff",
+                "on-primary-fixed-variant": "#003fa4",
+                "on-secondary": "#ffffff",
+                "on-primary": "#ffffff",
+                "surface-tint": "#0055d5",
+                "surface-container": "#edecfd",
+                "on-secondary-container": "#5e6572",
+                "surface-dim": "#d9d9e9",
+                "primary": "#0053d3",
+                "outline-variant": "#c2c6d8",
+                "on-primary-fixed": "#001849",
+                "on-surface-variant": "#424655",
+                "inverse-primary": "#b3c5ff",
+                "on-secondary-fixed": "#151c27",
+                "on-tertiary-fixed": "#3e0500",
+                "on-background": "#191b26",
+                "secondary-container": "#dce2f3",
+                "on-error-container": "#93000a",
+                "on-tertiary": "#ffffff",
+                "error": "#ba1a1a",
+                "surface-variant": "#e1e1f2",
+                "tertiary": "#b32606"
+              },
+              fontFamily: {
+                "headline": ["Inter", "sans-serif"],
+                "body": ["Inter", "sans-serif"],
+                "label": ["Inter", "sans-serif"]
+              },
+              borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+            },
+          },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; font-weight: 500; background-color: #F7F8FA; }
+        .syne-bold { font-family: 'Inter', sans-serif; font-weight: 700; }
+        .syne-extrabold { font-family: 'Inter', sans-serif; font-weight: 800; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+    </style>
+<style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface pb-32 font-medium">
+<!-- Top AppBar -->
+<header class="bg-[#F7F8FA] dark:bg-slate-900 flex justify-between items-center w-full px-6 py-4 sticky top-0 z-50">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center text-on-primary font-headline text-lg overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Professional profile photo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-XMmVJ88Rhc-qhahD3KVnxuIpkKJo9BmUGzLH-kym930f1raEieWJUk24Bh5N8vU7ysJ4xjiVOuAfmK0kEUh-DX-VaLmuqoPqRBTi517Pf0s8xG_2jSi-YDkqofNSJ33zJQdIJqli34WwGSt9TLB73pdtmOxOIXUPG8W7UuJkixx8t8R0f3VaOEFgGo0QFJKBh2zgwYNFwvaKu0bV-dsnv0nruC_988w1am0Llo4Oa0LxYcOK3O8XeGtqWtJlZ6vWcjN5VKXnrryG"/>
+</div>
+<h1 class="font-['Inter'] font-extrabold text-[#1A6BFF] tracking-tight text-xl">ServiTask</h1>
+</div>
+<div class="flex items-center gap-4">
+<button class="text-[#6B7280] dark:text-slate-400 hover:opacity-80 transition-opacity active:scale-95 duration-150">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+</div>
+</header>
+<main class="max-w-md mx-auto px-4 space-y-6">
+<!-- Hero Section: Stats & Income -->
+<section class="relative overflow-hidden rounded-[24px] p-8 text-white shadow-lg" style="background: linear-gradient(135deg, #1A6BFF 0%, #0053D3 100%);">
+<div class="relative z-10">
+<span class="text-[10px] font-bold uppercase tracking-[0.2em] opacity-80">TOTAL ESTE MES</span>
+<div class="flex items-baseline gap-2 mt-1">
+<h2 class="syne-extrabold text-5xl">$1,248</h2>
+</div>
+<div class="flex items-center gap-3 mt-4 text-sm font-medium">
+<span class="flex items-center gap-1 bg-white/20 backdrop-blur px-3 py-1 rounded-full">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">check_circle</span> 14 trabajos
+                </span>
+<span class="flex items-center gap-1 bg-white/20 backdrop-blur px-3 py-1 rounded-full">
+<span class="material-symbols-outlined text-[16px] text-yellow-300" style="font-variation-settings: 'FILL' 1;">star</span> 4.9 promedio
+                </span>
+</div>
+</div>
+<!-- Decorative circle -->
+<div class="absolute -bottom-10 -right-10 w-40 h-40 bg-white/10 rounded-full blur-3xl"></div>
+</section>
+<!-- Tabs & Financial Chart -->
+<section class="bg-surface-container-lowest rounded-[24px] p-6 space-y-6">
+<div class="flex bg-surface-container-low p-1 rounded-xl">
+<button class="flex-1 py-2 text-sm font-bold text-on-surface-variant">Esta semana</button>
+<button class="flex-1 py-2 text-sm font-bold bg-white text-primary rounded-lg shadow-sm">Este mes</button>
+</div>
+<!-- Chart Simulation -->
+<div class="space-y-4">
+<div class="flex justify-between items-end h-32 px-2">
+<div class="flex flex-col items-center gap-2 group">
+<span class="text-[10px] font-bold text-on-surface-variant opacity-0 group-hover:opacity-100">$210</span>
+<div class="w-8 bg-primary-container/30 rounded-t-lg h-[60%] transition-all"></div>
+<span class="text-[10px] font-bold text-on-surface-variant">L</span>
+</div>
+<div class="flex flex-col items-center gap-2 group">
+<span class="text-[10px] font-bold text-on-surface-variant opacity-0 group-hover:opacity-100">$180</span>
+<div class="w-8 bg-primary-container/30 rounded-t-lg h-[50%] transition-all"></div>
+<span class="text-[10px] font-bold text-on-surface-variant">M</span>
+</div>
+<div class="flex flex-col items-center gap-2 group">
+<span class="text-[10px] font-bold text-on-surface-variant opacity-0 group-hover:opacity-100">$290</span>
+<div class="w-8 bg-primary-container rounded-t-lg h-[90%] transition-all"></div>
+<span class="text-[10px] font-bold text-primary font-bold">H</span>
+</div>
+<div class="flex flex-col items-center gap-2 group">
+<span class="text-[10px] font-bold text-on-surface-variant opacity-0 group-hover:opacity-100">$150</span>
+<div class="w-8 bg-primary-container/30 rounded-t-lg h-[40%] transition-all"></div>
+<span class="text-[10px] font-bold text-on-surface-variant">V</span>
+</div>
+<div class="flex flex-col items-center gap-2 group">
+<span class="text-[10px] font-bold text-on-surface-variant opacity-0 group-hover:opacity-100">$240</span>
+<div class="w-8 bg-primary-container/30 rounded-t-lg h-[75%] transition-all"></div>
+<span class="text-[10px] font-bold text-on-surface-variant">S</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Financial Breakdown -->
+<section class="bg-surface-container-lowest rounded-[24px] p-6">
+<h3 class="syne-bold text-lg mb-4">Desglose financiero</h3>
+<div class="space-y-4">
+<div class="flex justify-between items-center pb-2">
+<span class="text-on-surface-variant text-sm">Subtotal servicios</span>
+<span class="font-bold text-on-surface">$1,313.60</span>
+</div>
+<div class="flex justify-between items-center pb-2">
+<span class="text-on-surface-variant text-sm">Comisión plataforma (5%)</span>
+<span class="font-bold text-tertiary">-$65.68</span>
+</div>
+<div class="flex justify-between items-center pb-2 border-b border-surface-container-low">
+<span class="text-on-surface-variant text-sm">Bonos y propinas</span>
+<span class="font-bold text-success text-[#22C55E]">+$45.00</span>
+</div>
+<div class="flex justify-between items-center pt-2">
+<span class="syne-bold text-on-surface">Neto a cobrar</span>
+<span class="syne-extrabold text-2xl text-primary-container">$1,292.92</span>
+</div>
+</div>
+</section>
+<!-- Key Metrics -->
+<section class="grid grid-cols-3 gap-3">
+<div class="bg-surface-container-lowest p-4 rounded-2xl flex flex-col items-center text-center">
+<span class="text-[10px] font-bold text-on-surface-variant uppercase mb-1">Respuesta</span>
+<span class="syne-bold text-lg text-primary">98%</span>
+</div>
+<div class="bg-surface-container-lowest p-4 rounded-2xl flex flex-col items-center text-center">
+<span class="text-[10px] font-bold text-on-surface-variant uppercase mb-1">Aceptación</span>
+<span class="syne-bold text-lg text-primary">92%</span>
+</div>
+<div class="bg-surface-container-lowest p-4 rounded-2xl flex flex-col items-center text-center">
+<span class="text-[10px] font-bold text-on-surface-variant uppercase mb-1">Fiabilidad</span>
+<span class="syne-bold text-lg text-primary">100%</span>
+</div>
+</section>
+<!-- Rank & Progress -->
+<section class="bg-surface-container-lowest rounded-[24px] p-6 border-l-[4px] border-primary-container">
+<div class="flex justify-between items-center mb-4">
+<div class="flex items-center gap-2">
+<span class="bg-surface-variant text-primary-container px-3 py-1 rounded-full text-xs font-bold tracking-tight">🥇 Tasker Pro</span>
+</div>
+<span class="text-xs font-medium text-on-surface-variant">Siguiente: Platino</span>
+</div>
+<div class="w-full bg-surface-container-low h-2.5 rounded-full overflow-hidden mb-3">
+<div class="bg-primary-container h-full w-3/4 rounded-full"></div>
+</div>
+<p class="text-sm text-on-surface-variant font-medium">6 trabajos más para alcanzar <span class="text-on-surface font-bold">Platino</span>.</p>
+</section>
+<!-- Reviews Section -->
+<section class="bg-surface-container-lowest rounded-[24px] p-6 space-y-5">
+<div class="flex justify-between items-center">
+<h3 class="syne-bold text-lg">Reseñas</h3>
+<div class="flex items-center gap-1">
+<span class="syne-bold text-primary-container">4.9</span>
+<span class="material-symbols-outlined text-[18px] text-yellow-400" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+</div>
+<div class="space-y-4">
+<!-- Review 1 -->
+<div class="bg-surface-container-low/50 p-4 rounded-2xl space-y-2">
+<div class="flex justify-between">
+<div class="flex items-center gap-2">
+<img class="w-8 h-8 rounded-full object-cover" data-alt="Close-up portrait of a satisfied female customer, soft natural lighting, professional headshot" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDipOc3JZJ_FxVD5wpJSw7UDDscEU6XKVLmafcT9o2hvR5if5ihD9bg-KY7ZvkAhEgClVaUtOFtKqz2jgfO0pIbb6kzj5g6-URa84FcHQRoeJok-4wSoccAvn6cvxsIMaV5TuTm5IhBm8TWjQx2lbDcpl2KNkkql1kIlGDbS-6oCLW_ti4mGFNmEOUN6psH_Jhr6g_RUHyC8tuCQm4etaOCe4KraVKhec72ozS9I8SB3jlr9cq0RbcRY48TWUsM_Ni4rvG2gAQQCyYU"/>
+<span class="text-sm font-bold">Lucía Méndez</span>
+</div>
+<span class="text-[10px] text-on-surface-variant font-medium">Hace 2 días</span>
+</div>
+<p class="text-sm text-on-surface-variant leading-relaxed italic">"Excelente servicio, muy puntual y profesional con la reparación de la tubería."</p>
+</div>
+<!-- Review 2 -->
+<div class="bg-surface-container-low/50 p-4 rounded-2xl space-y-2">
+<div class="flex justify-between">
+<div class="flex items-center gap-2">
+<img class="w-8 h-8 rounded-full object-cover" data-alt="Portrait of a male user in a studio setting, warm tones, high quality photography" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBUSVGApkq4-jpQwfoEm8QjshFGvWk-hEpNhmYnswGaTQEQTKVV_w6ghpMJRj4oeR-Z6JcmGE1P60jefn5OZ7CYFOq2Pqe78pvrmeGT_X2DIFzl67PHiYmLbq_YINYI-kJuFlUyZVNSgSCdICRrkR0aW1I3dsyLq6DHtKub0QoFfMF8KmESEileE4XIFJYZbrMWUa2id50y-Co1V4T80HGKCr0B6m5ZzeGY91wHJuOU1IqeHN5Bx934bxvOVHXiqnrCWmKu5lgjZE7J"/>
+<span class="text-sm font-bold">Roberto G.</span>
+</div>
+<span class="text-[10px] text-on-surface-variant font-medium">Ayer</span>
+</div>
+<p class="text-sm text-on-surface-variant leading-relaxed italic">"Muy cuidadoso con los detalles. Recomendado 100%."</p>
+</div>
+</div>
+</section>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-3 bg-white/70 dark:bg-slate-900/70 backdrop-blur-md rounded-t-2xl shadow-[0px_-10px_30px_rgba(13,15,26,0.04)] border-t border-slate-100 dark:border-slate-800">
+<div class="flex flex-col items-center justify-center text-[#6B7280] dark:text-slate-500 hover:text-[#1A6BFF] transition-all active:scale-90">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-['Inter'] font-medium text-[10px] tracking-wide uppercase mt-1">Inicio</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#6B7280] dark:text-slate-500 hover:text-[#1A6BFF] transition-all active:scale-90">
+<span class="material-symbols-outlined" data-icon="assignment">assignment</span>
+<span class="font-['Inter'] font-medium text-[10px] tracking-wide uppercase mt-1">Tareas</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#6B7280] dark:text-slate-500 hover:text-[#1A6BFF] transition-all active:scale-90">
+<span class="material-symbols-outlined" data-icon="calendar_today">calendar_today</span>
+<span class="font-['Inter'] font-medium text-[10px] tracking-wide uppercase mt-1">Calendario</span>
+</div>
+<!-- Active Tab: Mi Negocio -->
+<div class="flex flex-col items-center justify-center text-[#1A6BFF] dark:text-blue-400 font-bold scale-110 transition-transform active:scale-90">
+<span class="material-symbols-outlined" data-icon="storefront" style="font-variation-settings: 'FILL' 1;">storefront</span>
+<span class="font-['Inter'] font-medium text-[10px] tracking-wide uppercase mt-1">Mi Negocio</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#6B7280] dark:text-slate-500 hover:text-[#1A6BFF] transition-all active:scale-90">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-['Inter'] font-medium text-[10px] tracking-wide uppercase mt-1">Perfil</span>
+</div>
+</nav>
+</body></html>

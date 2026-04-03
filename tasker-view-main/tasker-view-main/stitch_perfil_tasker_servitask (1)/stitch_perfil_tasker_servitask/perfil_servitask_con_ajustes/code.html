@@ -1,0 +1,282 @@
+<!DOCTYPE html><html lang="es" data-lt-installed="true"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700;800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              colors: {
+                "secondary-fixed-dim": "#c0c7d6",
+                "secondary-fixed": "#dce2f3",
+                "surface-container-highest": "#e1e1f2",
+                "on-secondary-fixed-variant": "#404754",
+                "surface-bright": "#fbf8ff",
+                "secondary": "#585f6c",
+                "tertiary-fixed-dim": "#ffb4a4",
+                "on-error": "#ffffff",
+                "primary-fixed": "#dae1ff",
+                "surface-container-lowest": "#ffffff",
+                "surface-container-low": "#f3f2ff",
+                "on-tertiary-fixed-variant": "#8c1700",
+                "surface": "#fbf8ff",
+                "on-primary-container": "#fffeff",
+                "primary-fixed-dim": "#b3c5ff",
+                "tertiary-container": "#d63f20",
+                "on-surface": "#191b26",
+                "error-container": "#ffdad6",
+                "outline": "#727687",
+                "inverse-surface": "#2e303c",
+                "on-tertiary-container": "#fffeff",
+                "background": "#fbf8ff",
+                "tertiary-fixed": "#ffdad3",
+                "primary-container": "#1a6bff",
+                "surface-container-high": "#e7e7f7",
+                "inverse-on-surface": "#f0efff",
+                "on-primary-fixed-variant": "#003fa4",
+                "on-secondary": "#ffffff",
+                "on-primary": "#ffffff",
+                "surface-tint": "#0055d5",
+                "surface-container": "#edecfd",
+                "on-secondary-container": "#5e6572",
+                "surface-dim": "#d9d9e9",
+                "primary": "#0053d3",
+                "outline-variant": "#c2c6d8",
+                "on-primary-fixed": "#001849",
+                "on-surface-variant": "#424655",
+                "inverse-primary": "#b3c5ff",
+                "on-secondary-fixed": "#151c27",
+                "on-tertiary-fixed": "#3e0500",
+                "on-background": "#191b26",
+                "secondary-container": "#dce2f3",
+                "on-error-container": "#93000a",
+                "on-tertiary": "#ffffff",
+                "error": "#ba1a1a",
+                "surface-variant": "#e1e1f2",
+                "tertiary": "#b32606",
+                "warning": "#855000"
+              },
+              fontFamily: {
+                "headline": ["Inter", "sans-serif"],
+                "body": ["Inter", "sans-serif"],
+                "label": ["Inter", "sans-serif"]
+              },
+              borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+            },
+          },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .editorial-shadow {
+            box-shadow: 0px 10px 30px rgba(13,15,26,0.04);
+        }
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+<body class="bg-surface font-body font-medium text-on-surface pb-32">
+<!-- Top App Bar -->
+<header class="bg-[#F7F8FA] dark:bg-slate-900 flex justify-between items-center w-full px-6 py-4 sticky top-0 z-50">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center text-on-primary font-headline font-bold text-lg" style="">
+            MT
+        </div>
+<h1 class="font-headline font-extrabold text-[#1A6BFF] tracking-tight text-xl" style="">ServiTask</h1>
+</div>
+<div class="flex items-center gap-4">
+<button class="text-[#6B7280] dark:text-slate-400 hover:opacity-80 transition-opacity active:scale-95 duration-150" style="">
+<span class="material-symbols-outlined" data-icon="notifications" style="">notifications</span>
+</button>
+</div>
+</header>
+<main class="max-w-md mx-auto px-4 pt-4">
+<!-- Hero Section: Profile Identity -->
+<section class="rounded-3xl p-8 mb-6 relative overflow-hidden bg-gradient-to-br from-[#E8F0FF] to-[#FFFFFF] border-none">
+<div class="relative z-10 flex flex-col items-center text-center">
+<div class="w-24 h-24 rounded-full bg-white p-1 shadow-sm mb-4">
+<div class="w-full h-full rounded-full bg-primary-fixed-dim flex items-center justify-center text-primary font-headline font-bold text-3xl" style="">
+                    MT
+                </div>
+</div>
+<h2 class="font-headline font-bold text-2xl text-on-surface mb-1" style="">Marisol Torres</h2>
+<p class="text-secondary font-medium mb-2" style="">marisol.t@gmail.com</p>
+<div class="flex justify-center mb-6">
+<div class="flex items-center bg-white/50 px-4 py-2 rounded-full gap-3 border border-primary/10 shadow-sm">
+<span class="text-[10px] font-bold uppercase tracking-wider text-primary" style="">En línea</span>
+<div class="w-9 h-5 bg-primary rounded-full relative flex items-center px-1">
+<div class="w-3.5 h-3.5 bg-white rounded-full ml-auto shadow-sm"></div>
+</div>
+</div>
+</div>
+<div class="flex gap-2 mb-8">
+<span class="px-3 py-1 rounded-full bg-surface-variant text-primary text-xs font-bold flex items-center gap-1" style="">
+<span class="material-symbols-outlined text-[14px]" data-icon="check_circle" style="font-variation-settings: &quot;FILL&quot; 1;">check_circle</span>
+                    Verificado
+                </span>
+<span class="px-3 py-1 rounded-full bg-warning/10 text-warning text-xs font-bold flex items-center gap-1 border border-warning/20" style="">
+<span class="material-symbols-outlined text-[14px]" data-icon="stars" style="font-variation-settings: &quot;FILL&quot; 1;">stars</span>
+                    Pro
+                </span>
+</div>
+<!-- Stats Bento Grid -->
+<div class="grid grid-cols-3 gap-3 w-full">
+<div class="bg-white/60 backdrop-blur-sm p-4 rounded-2xl flex flex-col items-center">
+<span class="font-headline font-bold text-lg text-primary" style="">243</span>
+<span class="text-[10px] uppercase tracking-wider text-secondary font-bold" style="">Trabajos</span>
+</div>
+<div class="bg-white/60 backdrop-blur-sm p-4 rounded-2xl flex flex-col items-center">
+<span class="font-headline font-bold text-lg text-primary" style="">4.9</span>
+<span class="text-[10px] uppercase tracking-wider text-secondary font-bold" style="">Rating</span>
+</div>
+<div class="bg-white/60 backdrop-blur-sm p-4 rounded-2xl flex flex-col items-center">
+<span class="font-headline font-bold text-lg text-primary" style="">$15.4k</span>
+<span class="text-[10px] uppercase tracking-wider text-secondary font-bold" style="">Ganado</span>
+</div>
+</div>
+</div>
+<!-- Decorative blur element -->
+<div class="absolute -top-10 -right-10 w-40 h-40 bg-primary/5 rounded-full blur-3xl"></div>
+</section>
+<!-- Services Section -->
+<section class="mb-8 px-2">
+<div class="flex justify-between items-center mb-4">
+<h3 class="font-headline font-bold text-lg text-on-surface" style="">Mis Habilidades</h3>
+<button class="text-primary text-sm font-bold flex items-center gap-1 hover:underline" style="">
+<span class="material-symbols-outlined text-sm" data-icon="add" style="">add</span>
+                Agregar
+            </button>
+</div>
+<div class="flex flex-wrap gap-2">
+<span class="px-4 py-2 rounded-full bg-surface-container-low text-primary font-medium text-sm" style="">Pintura</span>
+<span class="px-4 py-2 rounded-full bg-surface-container-low text-primary font-medium text-sm" style="">Montaje de Muebles</span>
+<span class="px-4 py-2 rounded-full bg-surface-container-low text-primary font-medium text-sm" style="">Limpieza</span>
+</div>
+</section>
+<!-- Sync / Integrations Section -->
+<section class="mb-8 px-2">
+<h3 class="font-headline font-bold text-lg text-on-surface mb-4" style="">Sincronización</h3>
+<div class="bg-surface-container-lowest rounded-3xl p-5 shadow-[0px_10px_30px_rgba(13,15,26,0.04)]">
+<div class="flex items-center justify-between mb-4">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-xl bg-[#F1F3F4] flex items-center justify-center">
+<img alt="Google Calendar" class="w-6 h-6" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCNwtGKWgDp9w3focgWeNLqXbpxgGxxDF0_zUW-amOBeHkkcLuMDGMA6cMbsTG79NDt9cU3BAkE5X1YjugeasD85FCfrT7lWXYp97xfe-r-YhWpRTgphmAowZKdkCdlP8VpKez5NWvZaGmFVH6yoShZti2aIKgaR9w8CaE4LRqdbg4bRUYDWVGCLKq83wO52xYYWuwTnAGupoe7YHrXKBBsD7DuyLhG4M2XQ623emn_ZvSh_rtar9EvWd7aqbUu5-9XTJ_m58kOk69p" style="">
+</div>
+<div>
+<h4 class="font-bold text-on-surface text-sm" style="">Google Calendar</h4>
+<p class="text-secondary text-xs" style="">marisol.t@gmail.com</p>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-green-100 text-green-700 text-[10px] font-bold uppercase tracking-wider" style="">Conectado</span>
+</div>
+<button class="w-full py-2.5 rounded-xl border border-outline-variant text-on-surface-variant font-bold text-sm hover:bg-surface-container-low transition-colors active:scale-[0.98]" style="">
+                Desconectar
+            </button>
+</div>
+</section>
+<!-- Menu List -->
+<section class="bg-surface-container-lowest rounded-3xl overflow-hidden shadow-[0px_10px_30px_rgba(13,15,26,0.04)] mb-6">
+<div class="divide-y divide-surface-container-low">
+<button class="w-full flex items-center justify-between p-5 hover:bg-surface-container-low transition-colors group" style="">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-xl bg-surface-container-low flex items-center justify-center text-secondary group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="badge" style="">badge</span>
+</div>
+<span class="font-medium text-on-surface" style="">Mis documentos</span>
+</div>
+<span class="material-symbols-outlined text-secondary text-sm" data-icon="chevron_right" style="">chevron_right</span>
+</button>
+<button class="w-full flex items-center justify-between p-5 hover:bg-surface-container-low transition-colors group" style="">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-xl bg-surface-container-low flex items-center justify-center text-secondary group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="credit_card" style="">credit_card</span>
+</div>
+<span class="font-medium text-on-surface" style="">Datos de pago</span>
+</div>
+<span class="material-symbols-outlined text-secondary text-sm" data-icon="chevron_right" style="">chevron_right</span>
+</button>
+<button class="w-full flex items-center justify-between p-5 hover:bg-surface-container-low transition-colors group" style="">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-xl bg-surface-container-low flex items-center justify-center text-secondary group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="notifications_active" style="">notifications_active</span>
+</div>
+<span class="font-medium text-on-surface" style="">Notificaciones</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-tertiary-container"></span>
+<span class="material-symbols-outlined text-secondary text-sm" data-icon="chevron_right" style="">chevron_right</span>
+</div>
+</button>
+<button class="w-full flex items-center justify-between p-5 hover:bg-surface-container-low transition-colors group" style="">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-xl bg-surface-container-low flex items-center justify-center text-secondary group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="rate_review" style="">rate_review</span>
+</div>
+<span class="font-medium text-on-surface" style="">Mis reseñas</span>
+</div>
+<span class="material-symbols-outlined text-secondary text-sm" data-icon="chevron_right" style="">chevron_right</span>
+</button>
+<button class="w-full flex items-center justify-between p-5 hover:bg-surface-container-low transition-colors group" style="">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-xl bg-surface-container-low flex items-center justify-center text-secondary group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="shield" style="">shield</span>
+</div>
+<span class="font-medium text-on-surface" style="">Seguridad y Ayuda</span>
+</div>
+<span class="material-symbols-outlined text-secondary text-sm" data-icon="chevron_right" style="">chevron_right</span>
+</button>
+<button class="w-full flex items-center justify-between p-5 hover:bg-surface-container-low transition-colors group" style="">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-xl bg-surface-container-low flex items-center justify-center text-secondary group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="help" style="">help</span>
+</div>
+<span class="font-medium text-on-surface" style="">Ayuda</span>
+</div>
+<span class="material-symbols-outlined text-secondary text-sm" data-icon="chevron_right" style="">chevron_right</span>
+</button>
+<button class="w-full flex items-center justify-between p-5 hover:bg-surface-container-low transition-colors group" style="">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-xl bg-surface-container-low flex items-center justify-center text-secondary group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="settings" style="">settings</span>
+</div>
+<span class="font-medium text-on-surface" style="">Ajustes</span>
+</div>
+<span class="material-symbols-outlined text-secondary text-sm" data-icon="chevron_right" style="">chevron_right</span>
+</button></div>
+</section>
+<!-- Logout Button -->
+<button class="w-full bg-[#FEE2E2] text-[#DC2626] font-headline font-bold py-4 rounded-2xl flex items-center justify-center gap-2 transition-transform active:scale-[0.98]" style="">
+<span class="material-symbols-outlined" data-icon="logout" style="">logout</span>
+        Cerrar sesión
+    </button>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-3 bg-white/70 dark:bg-slate-900/70 backdrop-blur-md rounded-t-2xl shadow-[0px_-10px_30px_rgba(13,15,26,0.04)]">
+<a class="flex flex-col items-center justify-center text-[#6B7280] dark:text-slate-500 hover:text-[#1A6BFF] transition-all active:scale-90" href="#" style="">
+<span class="material-symbols-outlined" data-icon="home" style="">home</span>
+<span class="font-body font-medium text-[10px] tracking-wide uppercase" style="">Inicio</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#6B7280] dark:text-slate-500 hover:text-[#1A6BFF] transition-all active:scale-90" href="#" style="">
+<span class="material-symbols-outlined" data-icon="assignment" style="">assignment</span>
+<span class="font-body font-medium text-[10px] tracking-wide uppercase" style="">Tareas</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#6B7280] dark:text-slate-500 hover:text-[#1A6BFF] transition-all active:scale-90" href="#" style="">
+<span class="material-symbols-outlined" data-icon="calendar_today" style="">calendar_today</span>
+<span class="font-body font-medium text-[10px] tracking-wide uppercase" style="">Calendario</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#6B7280] dark:text-slate-500 hover:text-[#1A6BFF] transition-all active:scale-90" href="#" style="">
+<span class="material-symbols-outlined" data-icon="storefront" style="">storefront</span>
+<span class="font-body font-medium text-[10px] tracking-wide uppercase" style="">Mi Negocio</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#1A6BFF] dark:text-blue-400 font-bold scale-110 transition-transform" href="#" style="">
+<span class="material-symbols-outlined" data-icon="person" style="font-variation-settings: &quot;FILL&quot; 1;">person</span>
+<span class="font-body font-medium text-[10px] tracking-wide uppercase" style="">Perfil</span>
+</a>
+</nav>
+</body></html>

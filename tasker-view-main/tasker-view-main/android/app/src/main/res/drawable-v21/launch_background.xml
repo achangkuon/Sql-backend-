@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Splash screen background while Flutter engine loads.
+     Uses explicit white instead of ?android:colorBackground to avoid
+     the black screen bug in dark mode on Android API 35+ emulators. -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@android:color/white" />
+</layer-list>
