@@ -17,7 +17,7 @@ class ProfileScreen extends ConsumerWidget {
     final skillsAsync = ref.watch(taskerSkillsProvider);
 
     return Scaffold(
-      backgroundColor: AppColors.surface,
+      backgroundColor: AppColors.background,
       appBar: AppBar(
         automaticallyImplyLeading: false,
         backgroundColor: Colors.transparent,
@@ -37,7 +37,7 @@ class ProfileScreen extends ConsumerWidget {
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 11,
-                    fontWeight: FontWeight.bold,
+                    fontWeight: FontWeight.w500,
                   ),
                 ),
               ),
@@ -49,7 +49,7 @@ class ProfileScreen extends ConsumerWidget {
         actions: [
           IconButton(
             icon: const Icon(Icons.notifications_none_rounded,
-                color: AppColors.textPrimary),
+                color: AppColors.onSurface),
             onPressed: () {},
           ),
         ],
@@ -76,7 +76,7 @@ class ProfileScreen extends ConsumerWidget {
                       width: 80,
                       height: 80,
                       decoration: BoxDecoration(
-                        color: AppColors.surfaceVariant,
+                        color: AppColors.surfaceContainerHighest,
                         shape: BoxShape.circle,
                         border: Border.all(
                           color: AppColors.primary.withValues(alpha: 0.2),
@@ -98,14 +98,14 @@ class ProfileScreen extends ConsumerWidget {
                     const SizedBox(height: 12),
 
                     // Name
-                    Text(profile.fullName, style: AppTypography.headlineMD),
+                    Text(profile.fullName, style: AppTypography.headline),
                     const SizedBox(height: 4),
 
                     // Email
                     Text(
                       profile.email,
                       style: AppTypography.bodySM
-                          .copyWith(color: AppColors.textSecondary),
+                          .copyWith(color: AppColors.onSurfaceVariant),
                     ),
 
                     const SizedBox(height: 12),
@@ -154,7 +154,7 @@ class ProfileScreen extends ConsumerWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text('Mis Habilidades', style: AppTypography.headlineMD),
+                Text('Mis Habilidades', style: AppTypography.headline),
                 GestureDetector(
                   onTap: () {},
                   child: Text(
@@ -174,7 +174,7 @@ class ProfileScreen extends ConsumerWidget {
                     child: Text(
                       'Aún no has agregado habilidades.',
                       style: AppTypography.bodySM
-                          .copyWith(color: AppColors.textSecondary),
+                          .copyWith(color: AppColors.onSurfaceVariant),
                     ),
                   );
                 }
@@ -273,7 +273,7 @@ class ProfileScreen extends ConsumerWidget {
         style: const TextStyle(
           color: AppColors.primary,
           fontSize: 26,
-          fontWeight: FontWeight.bold,
+          fontWeight: FontWeight.w500,
         ),
       ),
     );
@@ -358,14 +358,14 @@ class ProfileScreen extends ConsumerWidget {
       children: [
         Text(
           value,
-          style: AppTypography.headlineMD
-              .copyWith(color: AppColors.textPrimary, fontSize: 22),
+          style: AppTypography.headline
+              .copyWith(color: AppColors.onSurface, fontSize: 22),
         ),
         const SizedBox(height: 2),
         Text(
           label,
           style: AppTypography.labelSM
-              .copyWith(color: AppColors.textSecondary, letterSpacing: 0.8),
+              .copyWith(color: AppColors.onSurfaceVariant, letterSpacing: 0.8),
         ),
       ],
     );
@@ -384,7 +384,7 @@ class ProfileScreen extends ConsumerWidget {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
       decoration: BoxDecoration(
-        color: AppColors.surfaceVariant,
+        color: AppColors.surfaceContainerHighest,
         borderRadius: BorderRadius.circular(20),
       ),
       child: Text(
@@ -400,7 +400,7 @@ class ProfileScreen extends ConsumerWidget {
       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
       child: Row(
         children: [
-          Icon(icon, color: AppColors.textSecondary, size: 22),
+          Icon(icon, color: AppColors.onSurfaceVariant, size: 22),
           const SizedBox(width: 14),
           Expanded(
             child: Text(label, style: AppTypography.bodyMD),
@@ -416,7 +416,7 @@ class ProfileScreen extends ConsumerWidget {
               ),
             ),
           const Icon(Icons.chevron_right_rounded,
-              color: AppColors.textSecondary, size: 20),
+              color: AppColors.onSurfaceVariant, size: 20),
         ],
       ),
     );
@@ -447,7 +447,7 @@ class ProfileScreen extends ConsumerWidget {
       context: context,
       builder: (ctx) => AlertDialog(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
-        title: Text('Cerrar sesión', style: AppTypography.headlineMD),
+        title: Text('Cerrar sesión', style: AppTypography.headline),
         content: Text(
           '¿Estás seguro de que deseas cerrar la sesión?',
           style: AppTypography.bodyMD,
@@ -457,7 +457,7 @@ class ProfileScreen extends ConsumerWidget {
             onPressed: () => Navigator.of(ctx).pop(false),
             child: Text('Cancelar',
                 style: AppTypography.bodyMD
-                    .copyWith(color: AppColors.textSecondary)),
+                    .copyWith(color: AppColors.onSurfaceVariant)),
           ),
           TextButton(
             onPressed: () => Navigator.of(ctx).pop(true),
@@ -494,7 +494,7 @@ class _OnlineToggle extends ConsumerWidget {
         Text(
           effectiveOnline ? 'EN LÍNEA' : 'FUERA DE LÍNEA',
           style: AppTypography.labelSM.copyWith(
-            color: effectiveOnline ? AppColors.success : AppColors.textSecondary,
+            color: effectiveOnline ? AppColors.success : AppColors.onSurfaceVariant,
             letterSpacing: 0.8,
           ),
         ),
@@ -512,3 +512,6 @@ class _OnlineToggle extends ConsumerWidget {
     );
   }
 }
+
+
+

@@ -106,14 +106,14 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                           Text(
                             _currentPage == _pages.length - 1 ? 'Empezar' : 'Siguiente',
                             style: AppTypography.headlineSM.copyWith(
-                              color: AppColors.surfaceLowest,
+                              color: AppColors.surfaceContainerLowest,
                               fontSize: 16,
                             ),
                           ),
                           const SizedBox(width: 8),
                           Icon(
                             _currentPage == _pages.length - 1 ? Icons.check_rounded : Icons.arrow_forward_rounded,
-                            color: AppColors.surfaceLowest,
+                            color: AppColors.surfaceContainerLowest,
                             size: 20,
                           ),
                         ],
@@ -176,7 +176,7 @@ class _OnboardingPageContent extends StatelessWidget {
           Text(
             model.title,
             textAlign: TextAlign.center,
-            style: AppTypography.headlineLG.copyWith(
+            style: AppTypography.displaySM.copyWith(
               fontSize: 32,
               height: 1.1,
             ),
@@ -187,7 +187,7 @@ class _OnboardingPageContent extends StatelessWidget {
             textAlign: TextAlign.center,
             style: AppTypography.titleMD.copyWith(
               color: AppColors.primary,
-              fontWeight: FontWeight.bold,
+              fontWeight: FontWeight.w500,
             ),
           ),
           const SizedBox(height: 16),
@@ -195,7 +195,7 @@ class _OnboardingPageContent extends StatelessWidget {
             model.description,
             textAlign: TextAlign.center,
             style: AppTypography.bodyLG.copyWith(
-              color: AppColors.textSecondary,
+              color: AppColors.onSurfaceVariant,
             ),
           ),
         ],
@@ -203,3 +203,6 @@ class _OnboardingPageContent extends StatelessWidget {
     );
   }
 }
+
+
+

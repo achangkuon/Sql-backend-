@@ -52,13 +52,13 @@ class _ScheduleTaskScreenState extends ConsumerState<ScheduleTaskScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.surface,
+      backgroundColor: AppColors.background,
       appBar: AppBar(
-        backgroundColor: AppColors.surface.withValues(alpha: 0.8),
+        backgroundColor: AppColors.background.withValues(alpha: 0.8),
         elevation: 0,
         leading: IconButton(
           onPressed: () => Navigator.of(context).pop(),
-          icon: const Icon(Icons.arrow_back, color: AppColors.textPrimary),
+          icon: const Icon(Icons.arrow_back, color: AppColors.onSurface),
         ),
         title: Text(
           widget.isRescheduling ? 'Reagendar Tarea' : 'Agendar Tarea',
@@ -83,7 +83,7 @@ class _ScheduleTaskScreenState extends ConsumerState<ScheduleTaskScreen> {
                 // ── Section 2: Duration ──
                 Text('Tiempo estimado',
                     style: AppTypography.bodyMD
-                        .copyWith(color: AppColors.textSecondary)),
+                        .copyWith(color: AppColors.onSurfaceVariant)),
                 const SizedBox(height: 12),
                 _buildDurationSelector(),
 
@@ -92,7 +92,7 @@ class _ScheduleTaskScreenState extends ConsumerState<ScheduleTaskScreen> {
                 // ── Section 3: Price ──
                 Text('Fijar tarifa',
                     style: AppTypography.bodyMD
-                        .copyWith(color: AppColors.textSecondary)),
+                        .copyWith(color: AppColors.onSurfaceVariant)),
                 const SizedBox(height: 12),
                 _buildPriceInput(),
 
@@ -101,7 +101,7 @@ class _ScheduleTaskScreenState extends ConsumerState<ScheduleTaskScreen> {
                 // ── Section 4: Task Summary ──
                 Text('Resumen de la tarea',
                     style: AppTypography.bodyMD
-                        .copyWith(color: AppColors.textSecondary)),
+                        .copyWith(color: AppColors.onSurfaceVariant)),
                 const SizedBox(height: 12),
                 _buildTaskSummary(),
 
@@ -124,7 +124,7 @@ class _ScheduleTaskScreenState extends ConsumerState<ScheduleTaskScreen> {
       children: [
         Text(left,
             style:
-                AppTypography.bodyMD.copyWith(color: AppColors.textSecondary)),
+                AppTypography.bodyMD.copyWith(color: AppColors.onSurfaceVariant)),
         Text(right,
             style: AppTypography.bodyMD
                 .copyWith(color: AppColors.primary, fontWeight: FontWeight.w500)),
@@ -186,14 +186,14 @@ class _ScheduleTaskScreenState extends ConsumerState<ScheduleTaskScreen> {
                     style: AppTypography.labelSM.copyWith(
                       color: isSelected
                           ? Colors.white.withValues(alpha: 0.8)
-                          : AppColors.textSecondary,
+                          : AppColors.onSurfaceVariant,
                     ),
                   ),
                   const SizedBox(height: 8),
                   Text(
                     '${date.day}',
                     style: AppTypography.titleMD.copyWith(
-                      color: isSelected ? Colors.white : AppColors.textPrimary,
+                      color: isSelected ? Colors.white : AppColors.onSurface,
                     ),
                   ),
                 ],
@@ -315,19 +315,19 @@ class _ScheduleTaskScreenState extends ConsumerState<ScheduleTaskScreen> {
           children: [
             Text(widget.task.title,
                 style: AppTypography.titleMD
-                    .copyWith(fontWeight: FontWeight.w600)),
+                    .copyWith(fontWeight: FontWeight.w500)),
             const SizedBox(height: 6),
             Text(
               widget.task.description,
               style: AppTypography.bodyMD
-                  .copyWith(color: AppColors.textSecondary),
+                  .copyWith(color: AppColors.onSurfaceVariant),
               maxLines: 2,
               overflow: TextOverflow.ellipsis,
             ),
             const SizedBox(height: 16),
             Container(
               height: 1,
-              color: AppColors.surface,
+              color: AppColors.background,
             ),
             const SizedBox(height: 16),
             Row(
@@ -393,7 +393,7 @@ class _ScheduleTaskScreenState extends ConsumerState<ScheduleTaskScreen> {
                   widget.isRescheduling ? 'Reagendar tarea' : 'Agendar tarea',
                   style: AppTypography.bodyMD.copyWith(
                       color: Colors.white,
-                      fontWeight: FontWeight.w600,
+                      fontWeight: FontWeight.w500,
                       fontSize: 16),
                 ),
         ),
@@ -437,3 +437,6 @@ class _ScheduleTaskScreenState extends ConsumerState<ScheduleTaskScreen> {
     }
   }
 }
+
+
+

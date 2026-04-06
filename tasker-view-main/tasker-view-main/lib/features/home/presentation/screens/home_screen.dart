@@ -18,7 +18,7 @@ class HomeScreen extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final profileAsync = ref.watch(currentProfileProvider);
     return Scaffold(
-      backgroundColor: AppColors.surface,
+      backgroundColor: AppColors.background,
       body: SafeArea(
         child: SingleChildScrollView(
           padding: const EdgeInsets.only(bottom: 100), // Space for bottom bar
@@ -87,7 +87,7 @@ class HomeScreen extends ConsumerWidget {
                     initials,
                     style: const TextStyle(
                       color: Colors.white,
-                      fontWeight: FontWeight.bold,
+                      fontWeight: FontWeight.w500,
                       fontSize: 18,
                     ),
                   ),
@@ -96,7 +96,7 @@ class HomeScreen extends ConsumerWidget {
               const SizedBox(width: 12),
               Text(
                 'Hola, $name',
-                style: AppTypography.headlineMD.copyWith(
+                style: AppTypography.headline.copyWith(
                   color: AppColors.primary,
                   fontWeight: FontWeight.w800,
                 ),
@@ -107,7 +107,7 @@ class HomeScreen extends ConsumerWidget {
             onPressed: () {},
             icon: const Icon(
               Icons.notifications_outlined,
-              color: AppColors.textSecondary,
+              color: AppColors.onSurfaceVariant,
             ),
           ),
         ],
@@ -165,7 +165,7 @@ class HomeScreen extends ConsumerWidget {
         children: [
           Text(
             title,
-            style: AppTypography.headlineMD.copyWith(
+            style: AppTypography.headline.copyWith(
               color: Colors.white,
               fontSize: 22,
             ),
@@ -215,12 +215,12 @@ class HomeScreen extends ConsumerWidget {
             data: (count) => _buildMetricCard(
               'Pendientes',
               count.toString(),
-              AppColors.warning,
+              AppColors.alert,
             ),
             loading: () =>
-                _buildMetricCard('Pendientes', '-', AppColors.warning),
+                _buildMetricCard('Pendientes', '-', AppColors.alert),
             error: (e, s) =>
-                _buildMetricCard('Pendientes', '0', AppColors.warning),
+                _buildMetricCard('Pendientes', '0', AppColors.alert),
           ),
         ],
       ),
@@ -233,7 +233,7 @@ class HomeScreen extends ConsumerWidget {
         margin: const EdgeInsets.symmetric(horizontal: 4.0),
         padding: const EdgeInsets.symmetric(vertical: 16.0, horizontal: 12.0),
         decoration: BoxDecoration(
-          color: AppColors.surfaceLowest,
+          color: AppColors.surfaceContainerLowest,
           borderRadius: BorderRadius.circular(16),
         ),
         child: Column(
@@ -242,14 +242,14 @@ class HomeScreen extends ConsumerWidget {
               label.toUpperCase(),
               style: AppTypography.labelMD.copyWith(
                 fontSize: 10,
-                color: AppColors.textSecondary,
+                color: AppColors.onSurfaceVariant,
                 letterSpacing: 1.2,
               ),
             ),
             const SizedBox(height: 8),
             Text(
               value,
-              style: AppTypography.headlineMD.copyWith(
+              style: AppTypography.headline.copyWith(
                 color: valueColor,
                 fontSize: 20,
               ),
@@ -268,7 +268,7 @@ class HomeScreen extends ConsumerWidget {
         children: [
           Text(
             'Estado del día',
-            style: AppTypography.headlineMD.copyWith(fontSize: 20),
+            style: AppTypography.headline.copyWith(fontSize: 20),
           ),
           const SizedBox(height: 16),
           Container(
@@ -321,7 +321,7 @@ class HomeScreen extends ConsumerWidget {
                                   'Configurar preferencias',
                                   style: AppTypography.labelMD.copyWith(
                                     color: AppColors.primary,
-                                    fontWeight: FontWeight.bold,
+                                    fontWeight: FontWeight.w500,
                                   ),
                                 ),
                                 const Icon(
@@ -352,7 +352,7 @@ class HomeScreen extends ConsumerWidget {
                     Text(
                       'No hay tareas programadas para hoy',
                       style: AppTypography.bodyMD.copyWith(
-                        color: AppColors.textSecondary,
+                        color: AppColors.onSurfaceVariant,
                       ),
                     ),
                   ],
@@ -375,7 +375,7 @@ class HomeScreen extends ConsumerWidget {
         children: [
           Text(
             'Tareas en curso',
-            style: AppTypography.headlineMD.copyWith(fontSize: 20),
+            style: AppTypography.headline.copyWith(fontSize: 20),
           ),
           const SizedBox(height: 16),
           tasksAsync.when(
@@ -387,7 +387,7 @@ class HomeScreen extends ConsumerWidget {
                     child: Text(
                       'No hay tareas en curso actualmente',
                       style: AppTypography.bodyMD.copyWith(
-                        color: AppColors.textSecondary,
+                        color: AppColors.onSurfaceVariant,
                       ),
                     ),
                   ),
@@ -474,7 +474,7 @@ class HomeScreen extends ConsumerWidget {
                       if (task.agreedPrice != null)
                         Text(
                           '\$${task.agreedPrice?.toInt()}',
-                          style: AppTypography.headlineMD.copyWith(
+                          style: AppTypography.headline.copyWith(
                             color: AppColors.primary,
                             fontSize: 18,
                           ),
@@ -483,7 +483,7 @@ class HomeScreen extends ConsumerWidget {
                         Text(
                           'Pendiente',
                           style: AppTypography.labelMD.copyWith(
-                            color: AppColors.textSecondary,
+                            color: AppColors.onSurfaceVariant,
                           ),
                         ),
                     ],
@@ -492,7 +492,7 @@ class HomeScreen extends ConsumerWidget {
                   Text(
                     task.addressLine,
                     style: AppTypography.labelMD.copyWith(
-                      color: AppColors.textSecondary,
+                      color: AppColors.onSurfaceVariant,
                     ),
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
@@ -530,7 +530,7 @@ class HomeScreen extends ConsumerWidget {
                                 color: task.status == 'in_progress'
                                     ? AppColors.primary
                                     : Colors.green,
-                                fontWeight: FontWeight.bold,
+                                fontWeight: FontWeight.w500,
                               ),
                             ),
                           ],
@@ -550,7 +550,7 @@ class HomeScreen extends ConsumerWidget {
                           DateFormat('dd MMM').format(task.createdAt),
                           style: AppTypography.labelMD.copyWith(
                             fontSize: 10,
-                            fontWeight: FontWeight.bold,
+                            fontWeight: FontWeight.w500,
                           ),
                         ),
                       ),
@@ -565,3 +565,6 @@ class HomeScreen extends ConsumerWidget {
     );
   }
 }
+
+
+

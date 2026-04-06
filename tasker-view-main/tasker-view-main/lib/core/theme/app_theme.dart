@@ -9,23 +9,23 @@ class AppTheme {
       colorScheme: ColorScheme.fromSeed(
         seedColor: AppColors.primary,
         primary: AppColors.primary,
-        onPrimary: AppColors.surfaceLowest,
-        surface: AppColors.surface,
-        onSurface: AppColors.textPrimary,
-        surfaceContainer: AppColors.surfaceLowest,
+        onPrimary: AppColors.surfaceContainerLowest,
+        surface: AppColors.background,
+        onSurface: AppColors.onSurface,
+        surfaceContainer: AppColors.surfaceContainerLowest,
         error: AppColors.error,
-        tertiary: AppColors.urgent,
+        secondary: AppColors.primaryDark,
       ),
       
       // Background and overall feel
-      scaffoldBackgroundColor: AppColors.surface,
+      scaffoldBackgroundColor: AppColors.background,
       
       // Typography mapping
       textTheme: TextTheme(
-        displayLarge: AppTypography.headlineLG,
-        displayMedium: AppTypography.headlineMD,
-        headlineMedium: AppTypography.headlineSM,
-        titleMedium: AppTypography.titleMD,
+        displayLarge: AppTypography.displayLG,
+        displayMedium: AppTypography.displayMD,
+        displaySmall: AppTypography.displaySM,
+        headlineMedium: AppTypography.headline,
         bodyLarge: AppTypography.bodyLG,
         bodyMedium: AppTypography.bodyMD,
         labelMedium: AppTypography.labelMD,
@@ -33,7 +33,7 @@ class AppTheme {
       
       // Card Design (Architectural Layering)
       cardTheme: CardThemeData(
-        color: AppColors.surfaceLowest,
+        color: AppColors.surfaceContainerLowest,
         elevation: 0,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(14),
@@ -43,18 +43,18 @@ class AppTheme {
       // Input Decoration (Tonal Layering)
       inputDecorationTheme: InputDecorationTheme(
         filled: true,
-        fillColor: AppColors.surfaceLowest,
+        fillColor: AppColors.surfaceContainerHighest,
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(14),
           borderSide: BorderSide.none,
         ),
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(14),
-          borderSide: BorderSide(color: AppColors.textSecondary.withValues(alpha: 0.1)),
+          borderSide: BorderSide(color: AppColors.outlineVariant.withValues(alpha: 0.15)),
         ),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(14),
-          borderSide: const BorderSide(color: AppColors.primary, width: 1.5),
+          borderSide: BorderSide(color: AppColors.primary.withValues(alpha: 0.2), width: 1.5),
         ),
         contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
       ),
@@ -63,15 +63,18 @@ class AppTheme {
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(
           backgroundColor: AppColors.primary,
-          foregroundColor: AppColors.surfaceLowest,
+          foregroundColor: AppColors.surfaceContainerLowest,
           elevation: 0,
           minimumSize: const Size.fromHeight(56),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(14),
           ),
-          textStyle: AppTypography.headlineSM.copyWith(fontSize: 16),
+          textStyle: AppTypography.labelLG,
         ),
       ),
     );
   }
 }
+
+
+

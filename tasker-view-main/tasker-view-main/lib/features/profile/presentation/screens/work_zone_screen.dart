@@ -74,7 +74,7 @@ class _WorkZoneScreenState extends ConsumerState<WorkZoneScreen> {
     final center = locationAsync.asData?.value ?? const LatLng(-0.1807, -78.4678);
 
     return Scaffold(
-      backgroundColor: AppColors.surface,
+      backgroundColor: AppColors.background,
       extendBodyBehindAppBar: true,
       appBar: AppBar(
         backgroundColor: Colors.white.withValues(alpha: 0.90),
@@ -87,7 +87,7 @@ class _WorkZoneScreenState extends ConsumerState<WorkZoneScreen> {
         ),
         title: Text(
           'Zona de trabajo',
-          style: AppTypography.titleMD.copyWith(fontWeight: FontWeight.bold),
+          style: AppTypography.titleMD.copyWith(fontWeight: FontWeight.w500),
         ),
         actions: [
           // Re-center button
@@ -151,7 +151,7 @@ class _WorkZoneScreenState extends ConsumerState<WorkZoneScreen> {
                       Text('Obteniendo ubicación…',
                           style: AppTypography.labelMD.copyWith(
                               fontSize: 12,
-                              color: AppColors.textSecondary)),
+                              color: AppColors.onSurfaceVariant)),
                     ],
                   ),
                 ),
@@ -193,13 +193,13 @@ class _WorkZoneScreenState extends ConsumerState<WorkZoneScreen> {
                                 style: AppTypography.labelMD.copyWith(
                                   fontSize: 10,
                                   letterSpacing: 1.2,
-                                  color: AppColors.textSecondary,
+                                  color: AppColors.onSurfaceVariant,
                                 ),
                               ),
                               const SizedBox(height: 4),
                               Text(
                                 'Radio de servicio',
-                                style: AppTypography.headlineMD
+                                style: AppTypography.headline
                                     .copyWith(fontSize: 20),
                               ),
                             ],
@@ -209,7 +209,7 @@ class _WorkZoneScreenState extends ConsumerState<WorkZoneScreen> {
                             children: [
                               Text(
                                 radius.toStringAsFixed(0),
-                                style: AppTypography.headlineMD.copyWith(
+                                style: AppTypography.headline.copyWith(
                                   color: AppColors.primary,
                                   fontSize: 32,
                                 ),
@@ -264,11 +264,11 @@ class _WorkZoneScreenState extends ConsumerState<WorkZoneScreen> {
                                 Text('5 KM',
                                     style: AppTypography.labelMD.copyWith(
                                         fontSize: 10,
-                                        color: AppColors.textSecondary)),
+                                        color: AppColors.onSurfaceVariant)),
                                 Text('25 KM',
                                     style: AppTypography.labelMD.copyWith(
                                         fontSize: 10,
-                                        color: AppColors.textSecondary)),
+                                        color: AppColors.onSurfaceVariant)),
                               ],
                             ),
                           ],
@@ -331,7 +331,7 @@ class _WorkZoneScreenState extends ConsumerState<WorkZoneScreen> {
                                   'Guardar configuración',
                                   style: AppTypography.bodyLG.copyWith(
                                     color: Colors.white,
-                                    fontWeight: FontWeight.bold,
+                                    fontWeight: FontWeight.w500,
                                   ),
                                 ),
                         ),
@@ -466,3 +466,6 @@ class _MapPlaceholder extends StatelessWidget {
     );
   }
 }
+
+
+

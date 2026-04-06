@@ -16,10 +16,10 @@ class BusinessScreen extends ConsumerWidget {
     final reviewsAsync = ref.watch(taskerReviewsProvider);
 
     return Scaffold(
-      backgroundColor: AppColors.surface,
+      backgroundColor: AppColors.background,
       appBar: AppBar(
         automaticallyImplyLeading: false,
-        title: Text('Mi Negocio', style: AppTypography.headlineMD),
+        title: Text('Mi Negocio', style: AppTypography.headline),
         backgroundColor: Colors.transparent,
         elevation: 0,
       ),
@@ -81,7 +81,7 @@ class BusinessScreen extends ConsumerWidget {
                             'Nivel Actual: $tier',
                             style: AppTypography.bodyMD.copyWith(
                               color: Colors.white,
-                              fontWeight: FontWeight.bold,
+                              fontWeight: FontWeight.w500,
                             ),
                           ),
                           Container(
@@ -127,7 +127,7 @@ class BusinessScreen extends ConsumerWidget {
             const SizedBox(height: 24),
 
             // ── Financial Breakdown (Invoice style) ───────────────
-            Text('Desglose financiero', style: AppTypography.headlineMD),
+            Text('Desglose financiero', style: AppTypography.headline),
             const SizedBox(height: 12),
             statsAsync.when(
               data: (stats) {
@@ -147,7 +147,7 @@ class BusinessScreen extends ConsumerWidget {
             const SizedBox(height: 24),
 
             // ── Reviews ──────────────────────────────────────────
-            Text('Reseñas de clientes', style: AppTypography.headlineMD),
+            Text('Reseñas de clientes', style: AppTypography.headline),
             const SizedBox(height: 12),
             reviewsAsync.when(
               data: (reviews) {
@@ -164,13 +164,13 @@ class BusinessScreen extends ConsumerWidget {
                         Icon(
                           Icons.star_outline_rounded,
                           size: 40,
-                          color: AppColors.textSecondary.withValues(alpha: 0.4),
+                          color: AppColors.onSurfaceVariant.withValues(alpha: 0.4),
                         ),
                         const SizedBox(height: 8),
                         Text(
                           'Aún no tienes reseñas.',
                           style: AppTypography.bodyMD.copyWith(
-                            color: AppColors.textSecondary,
+                            color: AppColors.onSurfaceVariant,
                           ),
                         ),
                       ],
@@ -225,7 +225,7 @@ class BusinessScreen extends ConsumerWidget {
             width: 36,
             height: 36,
             decoration: BoxDecoration(
-              color: AppColors.surfaceVariant,
+              color: AppColors.surfaceContainerHighest,
               borderRadius: BorderRadius.circular(10),
             ),
             child: Icon(icon, color: AppColors.primary, size: 20),
@@ -234,7 +234,7 @@ class BusinessScreen extends ConsumerWidget {
           Expanded(
             child: Text(label, style: AppTypography.bodyMD),
           ),
-          const Icon(Icons.chevron_right_rounded, color: AppColors.textSecondary),
+          const Icon(Icons.chevron_right_rounded, color: AppColors.onSurfaceVariant),
         ],
       ),
     );
@@ -275,7 +275,7 @@ class BusinessScreen extends ConsumerWidget {
                 Text(
                   'Resumen del período',
                   style: AppTypography.bodyMD.copyWith(
-                    color: AppColors.textSecondary,
+                    color: AppColors.onSurfaceVariant,
                   ),
                 ),
                 Text(
@@ -334,7 +334,7 @@ class BusinessScreen extends ConsumerWidget {
     Color? amountColor,
     String prefix = '',
   }) {
-    final effectiveColor = amountColor ?? AppColors.textPrimary;
+    final effectiveColor = amountColor ?? AppColors.onSurface;
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 12),
       child: Row(
@@ -345,18 +345,18 @@ class BusinessScreen extends ConsumerWidget {
             style:
                 isTotal
                     ? AppTypography.bodyMD.copyWith(
-                      color: AppColors.textPrimary,
-                      fontWeight: FontWeight.bold,
+                      color: AppColors.onSurface,
+                      fontWeight: FontWeight.w500,
                     )
                     : AppTypography.bodyMD.copyWith(
-                      color: AppColors.textSecondary,
+                      color: AppColors.onSurfaceVariant,
                     ),
           ),
           Text(
             '$prefix\$${amount.toStringAsFixed(2)}',
             style:
                 isTotal
-                    ? AppTypography.headlineMD.copyWith(color: effectiveColor)
+                    ? AppTypography.headline.copyWith(color: effectiveColor)
                     : AppTypography.bodyMD.copyWith(color: effectiveColor),
           ),
         ],
@@ -425,7 +425,7 @@ class BusinessScreen extends ConsumerWidget {
                 width: 36,
                 height: 36,
                 decoration: BoxDecoration(
-                  color: AppColors.surfaceVariant,
+                  color: AppColors.surfaceContainerHighest,
                   shape: BoxShape.circle,
                 ),
                 child: Icon(
@@ -441,7 +441,7 @@ class BusinessScreen extends ConsumerWidget {
                   Text(
                     'Cliente verificado',
                     style: AppTypography.bodyMD.copyWith(
-                      color: AppColors.textPrimary,
+                      color: AppColors.onSurface,
                     ),
                   ),
                   const SizedBox(height: 2),
@@ -452,7 +452,7 @@ class BusinessScreen extends ConsumerWidget {
                         index < review.rating
                             ? Icons.star_rounded
                             : Icons.star_outline_rounded,
-                        color: AppColors.warning,
+                        color: AppColors.alert,
                         size: 14,
                       );
                     }),
@@ -466,7 +466,7 @@ class BusinessScreen extends ConsumerWidget {
             '"${review.comment}"',
             style: AppTypography.bodyMD.copyWith(
               fontStyle: FontStyle.italic,
-              color: AppColors.textSecondary,
+              color: AppColors.onSurfaceVariant,
             ),
           ),
         ],
@@ -474,3 +474,6 @@ class BusinessScreen extends ConsumerWidget {
     );
   }
 }
+
+
+

@@ -24,7 +24,7 @@ class PreferencesScreen extends ConsumerWidget {
     final allDone = availabilityDone && skillsDone && workZoneDone;
 
     return Scaffold(
-      backgroundColor: AppColors.surface,
+      backgroundColor: AppColors.background,
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
@@ -35,7 +35,7 @@ class PreferencesScreen extends ConsumerWidget {
         ),
         title: Text(
           'Invitaciones para hoy',
-          style: AppTypography.titleMD.copyWith(fontWeight: FontWeight.bold),
+          style: AppTypography.titleMD.copyWith(fontWeight: FontWeight.w500),
         ),
         actions: [
           IconButton(
@@ -78,7 +78,7 @@ class PreferencesScreen extends ConsumerWidget {
                   title: Text(
                     'Recibir invitaciones para hoy',
                     style: AppTypography.titleMD.copyWith(
-                        fontWeight: FontWeight.bold, fontSize: 16),
+                        fontWeight: FontWeight.w500, fontSize: 16),
                   ),
                   subtitle: Text(
                     isOnline ? 'Disponible ahora' : 'No disponible',
@@ -97,7 +97,7 @@ class PreferencesScreen extends ConsumerWidget {
                         margin: const EdgeInsets.only(bottom: 16),
                         padding: const EdgeInsets.all(16),
                         decoration: BoxDecoration(
-                          color: AppColors.surface,
+                          color: AppColors.background,
                           borderRadius: BorderRadius.circular(14),
                           border: Border.all(
                               color: AppColors.outlineVariant
@@ -113,7 +113,7 @@ class PreferencesScreen extends ConsumerWidget {
                               child: Text(
                                 'Asegúrate de responder a las invitaciones para hoy en menos de una hora.',
                                 style: AppTypography.bodySM.copyWith(
-                                  color: AppColors.textSecondary,
+                                  color: AppColors.onSurfaceVariant,
                                   height: 1.4,
                                 ),
                               ),
@@ -189,7 +189,7 @@ class PreferencesScreen extends ConsumerWidget {
                   'Guardar y Activarse',
                   style: AppTypography.bodyLG.copyWith(
                     color: Colors.white,
-                    fontWeight: FontWeight.bold,
+                    fontWeight: FontWeight.w500,
                   ),
                 ),
               ),
@@ -244,7 +244,7 @@ class PreferencesScreen extends ConsumerWidget {
                     child: Text(
                       'Tu área actual está configurada en Ciudad de México',
                       style: AppTypography.bodySM.copyWith(
-                        color: AppColors.textPrimary,
+                        color: AppColors.onSurface,
                         fontSize: 12,
                       ),
                     ),
@@ -302,7 +302,7 @@ class _SettingCard extends StatelessWidget {
               decoration: BoxDecoration(
                 color: isDone
                     ? AppColors.primary.withValues(alpha: 0.10)
-                    : AppColors.surfaceVariant,
+                    : AppColors.surfaceContainerHighest,
                 borderRadius: BorderRadius.circular(12),
               ),
               child: Icon(icon,
@@ -316,7 +316,7 @@ class _SettingCard extends StatelessWidget {
                   Text(
                     title,
                     style: AppTypography.titleMD.copyWith(
-                      fontWeight: FontWeight.bold,
+                      fontWeight: FontWeight.w500,
                       fontSize: 16,
                     ),
                   ),
@@ -326,19 +326,22 @@ class _SettingCard extends StatelessWidget {
                     style: AppTypography.bodySM.copyWith(
                       color: isDone
                           ? AppColors.primary
-                          : AppColors.textSecondary,
+                          : AppColors.onSurfaceVariant,
                       fontWeight: isDone
-                          ? FontWeight.w600
+                          ? FontWeight.w500
                           : FontWeight.normal,
                     ),
                   ),
                 ],
               ),
             ),
-            const Icon(Icons.chevron_right, color: AppColors.textSecondary),
+            const Icon(Icons.chevron_right, color: AppColors.onSurfaceVariant),
           ],
         ),
       ),
     );
   }
 }
+
+
+

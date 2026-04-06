@@ -23,9 +23,9 @@ class AvailabilityScreen extends ConsumerWidget {
     final isSaving = hoursAsync is AsyncLoading;
 
     return Scaffold(
-      backgroundColor: AppColors.surface,
+      backgroundColor: AppColors.background,
       appBar: AppBar(
-        backgroundColor: AppColors.surface,
+        backgroundColor: AppColors.background,
         elevation: 0,
         centerTitle: false,
         leading: IconButton(
@@ -34,7 +34,7 @@ class AvailabilityScreen extends ConsumerWidget {
         ),
         title: Text(
           'Disponibilidad',
-          style: AppTypography.titleMD.copyWith(fontWeight: FontWeight.bold),
+          style: AppTypography.titleMD.copyWith(fontWeight: FontWeight.w500),
         ),
       ),
       body: Column(
@@ -46,7 +46,7 @@ class AvailabilityScreen extends ConsumerWidget {
             child: Text(
               'Selecciona los rangos de tiempo que estarás disponible hoy.',
               style: AppTypography.bodyMD
-                  .copyWith(color: AppColors.textSecondary, height: 1.5),
+                  .copyWith(color: AppColors.onSurfaceVariant, height: 1.5),
             ),
           ),
           Expanded(
@@ -118,7 +118,7 @@ class AvailabilityScreen extends ConsumerWidget {
             label: Text(
               isSaving ? 'Guardando...' : 'Guardar Horarios',
               style: AppTypography.bodyLG
-                  .copyWith(color: Colors.white, fontWeight: FontWeight.bold),
+                  .copyWith(color: Colors.white, fontWeight: FontWeight.w500),
             ),
             style: ElevatedButton.styleFrom(
               backgroundColor: AppColors.primary,
@@ -159,7 +159,7 @@ class _TimeSlotTile extends StatelessWidget {
               child: Text(
                 label,
                 style: AppTypography.labelMD.copyWith(
-                  color: AppColors.textSecondary,
+                  color: AppColors.onSurfaceVariant,
                   fontSize: 12,
                 ),
               ),
@@ -208,3 +208,6 @@ class _TimeSlotTile extends StatelessWidget {
     );
   }
 }
+
+
+

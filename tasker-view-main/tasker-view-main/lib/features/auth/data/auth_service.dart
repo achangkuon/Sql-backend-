@@ -41,4 +41,53 @@ class AuthService {
 
   // Listen to auth state changes
   Stream<AuthState> get onAuthStateChange => _supabase.auth.onAuthStateChange;
+
+  // Sign in with OTP (Email)
+  Future<void> signInWithOtp({required String email}) async {
+    await _supabase.auth.signInWithOtp(
+      email: email,
+      emailRedirectTo: 'io.supabase.servitask://login-callback/',
+    );
+  }
+
+  // Verify OTP token for email
+  Future<AuthResponse> verifyOTP({
+    required String email,
+    required String token,
+    OtpType type = OtpType.signup,
+  }) async {
+    return await _supabase.auth.verifyOTP(
+      type: type,
+      token: token,
+      email: email,
+    );
+  }
+
+  // Resend OTP token
+  Future<void> resendOTP({
+    required String email,
+    OtpType type = OtpType.signup,
+  }) async {
+    await _supabase.auth.resend(
+      type: type,
+      email: email,
+    );
+  }
+
+  // Check if user has a profile record
+  Future<bool> isProfileComplete(String userId) async {
+    try {
+      final response = await _supabase
+          .from('profiles')
+          .select()
+          .eq('id', userId)
+          .maybeSingle();
+      return response != null;
+    } catch (e) {
+      return false;
+    }
+  }
 }
+
+
+

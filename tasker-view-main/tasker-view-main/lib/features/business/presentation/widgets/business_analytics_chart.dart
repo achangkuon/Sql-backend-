@@ -39,7 +39,7 @@ class BusinessAnalyticsChart extends ConsumerWidget {
               Expanded(
                 child: Text(
                   period == ChartPeriod.weekly ? 'Análisis Semanal' : 'Análisis Mensual',
-                  style: AppTypography.headlineMD,
+                  style: AppTypography.headline,
                   overflow: TextOverflow.ellipsis,
                 ),
               ),
@@ -91,8 +91,8 @@ class BusinessAnalyticsChart extends ConsumerWidget {
         child: Text(
           label,
           style: AppTypography.labelSM.copyWith(
-            color: isSelected ? Colors.white : AppColors.textSecondary,
-            fontWeight: isSelected ? FontWeight.bold : FontWeight.normal,
+            color: isSelected ? Colors.white : AppColors.onSurfaceVariant,
+            fontWeight: isSelected ? FontWeight.w500 : FontWeight.normal,
           ),
         ),
       ),
@@ -125,7 +125,7 @@ class BusinessAnalyticsChart extends ConsumerWidget {
               reservedSize: 32,
               getTitlesWidget: (value, meta) {
                 if (value == 0) return const SizedBox.shrink();
-                return Text('\$${value.toInt()}', style: AppTypography.bodySM.copyWith(color: AppColors.textSecondary, fontSize: 10));
+                return Text('\$${value.toInt()}', style: AppTypography.bodySM.copyWith(color: AppColors.onSurfaceVariant, fontSize: 10));
               },
             ),
           ),
@@ -133,7 +133,7 @@ class BusinessAnalyticsChart extends ConsumerWidget {
             sideTitles: SideTitles(
               showTitles: true,
               getTitlesWidget: (double value, TitleMeta meta) {
-                const style = TextStyle(color: AppColors.textSecondary, fontSize: 12, fontWeight: FontWeight.w500);
+                const style = TextStyle(color: AppColors.onSurfaceVariant, fontSize: 12, fontWeight: FontWeight.w500);
                 String text;
                 switch (value.toInt()) {
                   case 0: text = 'Lun'; break;
@@ -202,21 +202,21 @@ class BusinessAnalyticsChart extends ConsumerWidget {
                   value: 60,
                   title: '60%',
                   radius: 20,
-                  titleStyle: const TextStyle(fontSize: 10, fontWeight: FontWeight.bold, color: Colors.white),
+                  titleStyle: const TextStyle(fontSize: 10, fontWeight: FontWeight.w500, color: Colors.white),
                 ),
                 PieChartSectionData(
                   color: AppColors.success,
                   value: 25,
                   title: '25%',
                   radius: 20,
-                  titleStyle: const TextStyle(fontSize: 10, fontWeight: FontWeight.bold, color: Colors.white),
+                  titleStyle: const TextStyle(fontSize: 10, fontWeight: FontWeight.w500, color: Colors.white),
                 ),
                 PieChartSectionData(
-                  color: AppColors.warning,
+                  color: AppColors.alert,
                   value: 15,
                   title: '15%',
                   radius: 20,
-                  titleStyle: const TextStyle(fontSize: 10, fontWeight: FontWeight.bold, color: Colors.white),
+                  titleStyle: const TextStyle(fontSize: 10, fontWeight: FontWeight.w500, color: Colors.white),
                 ),
               ],
             ),
@@ -232,7 +232,7 @@ class BusinessAnalyticsChart extends ConsumerWidget {
               const SizedBox(height: 8),
               _buildPieLegend(AppColors.success, 'Propinas'),
               const SizedBox(height: 8),
-              _buildPieLegend(AppColors.warning, 'Cargos Extras'),
+              _buildPieLegend(AppColors.alert, 'Cargos Extras'),
             ],
           ),
         ),
@@ -250,3 +250,6 @@ class BusinessAnalyticsChart extends ConsumerWidget {
     );
   }
 }
+
+
+

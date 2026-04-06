@@ -15,10 +15,10 @@ class CalendarScreen extends ConsumerWidget {
     final dailyBlocksAsync = ref.watch(dailyBlocksProvider(selectedDate));
 
     return Scaffold(
-      backgroundColor: AppColors.surface,
+      backgroundColor: AppColors.background,
       appBar: AppBar(
         automaticallyImplyLeading: false,
-        title: Text('Calendario', style: AppTypography.headlineMD),
+        title: Text('Calendario', style: AppTypography.headline),
         backgroundColor: Colors.transparent,
         elevation: 0,
       ),
@@ -91,14 +91,14 @@ class CalendarScreen extends ConsumerWidget {
                   Text(
                     DateFormat('E', 'es').format(date).toUpperCase(),
                     style: AppTypography.labelMD.copyWith(
-                      color: isSelected ? Colors.white : AppColors.textSecondary,
+                      color: isSelected ? Colors.white : AppColors.onSurfaceVariant,
                     ),
                   ),
                   const SizedBox(height: 8),
                   Text(
                     '${date.day}',
-                    style: AppTypography.headlineMD.copyWith(
-                      color: isSelected ? Colors.white : AppColors.textPrimary,
+                    style: AppTypography.headline.copyWith(
+                      color: isSelected ? Colors.white : AppColors.onSurface,
                     ),
                   ),
                 ],
@@ -116,7 +116,7 @@ class CalendarScreen extends ConsumerWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Icon(Icons.event_available, size: 64, color: AppColors.textSecondary.withAlpha(128)),
+            Icon(Icons.event_available, size: 64, color: AppColors.onSurfaceVariant.withAlpha(128)),
             const SizedBox(height: 16),
             Text(
               'No tienes bloques programados\npara este día.',
@@ -215,7 +215,7 @@ class _BlockCard extends StatelessWidget {
             ),
             child: Text(
               block.blockType.toUpperCase(),
-              style: AppTypography.labelSM.copyWith(color: badgeColor, fontWeight: FontWeight.bold),
+              style: AppTypography.labelSM.copyWith(color: badgeColor, fontWeight: FontWeight.w500),
             ),
           ),
           const SizedBox(width: 16),
@@ -225,12 +225,12 @@ class _BlockCard extends StatelessWidget {
               children: [
                 Text(
                   block.title,
-                  style: AppTypography.headlineMD,
+                  style: AppTypography.headline,
                 ),
                 const SizedBox(height: 8),
                 Row(
                   children: [
-                    const Icon(Icons.access_time_rounded, size: 16, color: AppColors.textSecondary),
+                    const Icon(Icons.access_time_rounded, size: 16, color: AppColors.onSurfaceVariant),
                     const SizedBox(width: 4),
                     Text(
                       '${formatTime.format(block.startTime)} - ${formatTime.format(block.endTime)}',
@@ -390,10 +390,13 @@ class _AddBlockBottomSheetState extends State<_AddBlockBottomSheet> {
             ),
             child: _isLoading
                 ? const SizedBox(height: 20, width: 20, child: CircularProgressIndicator(color: Colors.white, strokeWidth: 2))
-                : const Text('Guardar Bloque', style: TextStyle(color: Colors.white, fontSize: 16, fontWeight: FontWeight.bold)),
+                : const Text('Guardar Bloque', style: TextStyle(color: Colors.white, fontSize: 16, fontWeight: FontWeight.w500)),
           ),
         ],
       ),
     );
   }
 }
+
+
+

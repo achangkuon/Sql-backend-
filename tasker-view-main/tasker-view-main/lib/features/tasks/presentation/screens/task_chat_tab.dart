@@ -68,7 +68,7 @@ class _TaskChatTabState extends ConsumerState<TaskChatTab> {
           padding: const EdgeInsets.all(24),
           child: Text(
             'No se pudo iniciar el chat. Intenta confirmar la tarea primero.',
-            style: AppTypography.bodyMD.copyWith(color: AppColors.textSecondary),
+            style: AppTypography.bodyMD.copyWith(color: AppColors.onSurfaceVariant),
             textAlign: TextAlign.center,
           ),
         ),
@@ -94,12 +94,12 @@ class _TaskChatTabState extends ConsumerState<TaskChatTab> {
                     children: [
                       Icon(Icons.chat_bubble_outline,
                           size: 48,
-                          color: AppColors.textSecondary.withValues(alpha: 0.4)),
+                          color: AppColors.onSurfaceVariant.withValues(alpha: 0.4)),
                       const SizedBox(height: 12),
                       Text(
                         'Inicia la conversacion',
                         style: AppTypography.bodyMD
-                            .copyWith(color: AppColors.textSecondary),
+                            .copyWith(color: AppColors.onSurfaceVariant),
                       ),
                     ],
                   ),
@@ -210,7 +210,7 @@ class _TaskChatTabState extends ConsumerState<TaskChatTab> {
               child: Text(
                 msg.content ?? '',
                 style: AppTypography.bodyMD.copyWith(
-                  color: isMine ? Colors.white : AppColors.textPrimary,
+                  color: isMine ? Colors.white : AppColors.onSurface,
                   height: 1.5,
                 ),
               ),
@@ -229,7 +229,7 @@ class _TaskChatTabState extends ConsumerState<TaskChatTab> {
                     msg.isRead ? Icons.done_all : Icons.done,
                     size: 14,
                     color:
-                        msg.isRead ? AppColors.primary : AppColors.textSecondary,
+                        msg.isRead ? AppColors.primary : AppColors.onSurfaceVariant,
                   ),
                 ],
               ],
@@ -307,7 +307,7 @@ class _TaskChatTabState extends ConsumerState<TaskChatTab> {
               Text(
                 'Chat Activo',
                 style: AppTypography.labelSM
-                    .copyWith(color: AppColors.textSecondary),
+                    .copyWith(color: AppColors.onSurfaceVariant),
               ),
             ],
           ),
@@ -354,7 +354,7 @@ class _TaskChatTabState extends ConsumerState<TaskChatTab> {
                 decoration: InputDecoration(
                   hintText: 'Escribe un mensaje...',
                   hintStyle:
-                      AppTypography.bodyMD.copyWith(color: AppColors.textSecondary),
+                      AppTypography.bodyMD.copyWith(color: AppColors.onSurfaceVariant),
                   border: InputBorder.none,
                   contentPadding:
                       const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
@@ -406,3 +406,6 @@ class _TaskChatTabState extends ConsumerState<TaskChatTab> {
     return a.year == b.year && a.month == b.month && a.day == b.day;
   }
 }
+
+
+

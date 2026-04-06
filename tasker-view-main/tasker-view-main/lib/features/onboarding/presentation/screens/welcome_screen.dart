@@ -22,7 +22,7 @@ class WelcomeScreen extends StatelessWidget {
                 width: 120,
                 height: 120,
                 decoration: BoxDecoration(
-                  color: AppColors.surfaceLowest,
+                  color: AppColors.surfaceContainerLowest,
                   borderRadius: BorderRadius.circular(24),
                 ),
                 child: const Icon(
@@ -34,8 +34,8 @@ class WelcomeScreen extends StatelessWidget {
               const SizedBox(height: 32),
               Text(
                 'ServiTask',
-                style: AppTypography.headlineLG.copyWith(
-                  color: AppColors.surfaceLowest,
+                style: AppTypography.displaySM.copyWith(
+                  color: AppColors.surfaceContainerLowest,
                   fontSize: 40,
                 ),
               ),
@@ -43,7 +43,7 @@ class WelcomeScreen extends StatelessWidget {
               Text(
                 'Bienvenido a ServiTask',
                 style: AppTypography.titleMD.copyWith(
-                  color: AppColors.surfaceLowest,
+                  color: AppColors.surfaceContainerLowest,
                 ),
               ),
               const SizedBox(height: 8),
@@ -51,7 +51,7 @@ class WelcomeScreen extends StatelessWidget {
                 'Tu plataforma profesional para conectar con clientes locales y hacer crecer tu negocio de servicios.',
                 textAlign: TextAlign.center,
                 style: AppTypography.bodyLG.copyWith(
-                  color: AppColors.surfaceLowest.withValues(alpha: 0.9),
+                  color: AppColors.surfaceContainerLowest.withValues(alpha: 0.9),
                 ),
               ),
               const Spacer(),
@@ -62,7 +62,7 @@ class WelcomeScreen extends StatelessWidget {
                   );
                 },
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: AppColors.surfaceLowest,
+                  backgroundColor: AppColors.surfaceContainerLowest,
                   foregroundColor: AppColors.primary,
                 ),
                 child: Row(
@@ -88,3 +88,6 @@ class WelcomeScreen extends StatelessWidget {
     );
   }
 }
+
+
+

@@ -72,10 +72,10 @@ class _MainDashboardScreenState extends State<MainDashboardScreen> {
           elevation: 0,
           type: BottomNavigationBarType.fixed,
           selectedItemColor: AppColors.primary,
-          unselectedItemColor: AppColors.textSecondary,
+          unselectedItemColor: AppColors.onSurfaceVariant,
           selectedLabelStyle: const TextStyle(
             fontFamily: 'Inter',
-            fontWeight: FontWeight.w600,
+            fontWeight: FontWeight.w500,
             fontSize: 10,
             letterSpacing: 0.5,
           ),
@@ -118,3 +118,6 @@ class _MainDashboardScreenState extends State<MainDashboardScreen> {
     );
   }
 }
+
+
+

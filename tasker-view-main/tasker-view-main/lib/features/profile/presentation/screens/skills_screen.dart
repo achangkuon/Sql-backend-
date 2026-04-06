@@ -47,9 +47,9 @@ class SkillsScreen extends ConsumerWidget {
     final isSaving = skillsAsync is AsyncLoading;
 
     return Scaffold(
-      backgroundColor: AppColors.surface,
+      backgroundColor: AppColors.background,
       appBar: AppBar(
-        backgroundColor: AppColors.surface,
+        backgroundColor: AppColors.background,
         elevation: 0,
         leading: IconButton(
           icon: const Icon(Icons.arrow_back, color: AppColors.primary),
@@ -57,7 +57,7 @@ class SkillsScreen extends ConsumerWidget {
         ),
         title: Text(
           'Habilidades',
-          style: AppTypography.titleMD.copyWith(fontWeight: FontWeight.bold),
+          style: AppTypography.titleMD.copyWith(fontWeight: FontWeight.w500),
         ),
       ),
       body: Column(
@@ -72,13 +72,13 @@ class SkillsScreen extends ConsumerWidget {
               children: [
                 Text(
                   'Mis habilidades',
-                  style: AppTypography.headlineMD.copyWith(fontSize: 26),
+                  style: AppTypography.headline.copyWith(fontSize: 26),
                 ),
                 const SizedBox(height: 6),
                 Text(
                   'Selecciona las tareas que puedes realizar hoy',
                   style: AppTypography.bodyMD
-                      .copyWith(color: AppColors.textSecondary),
+                      .copyWith(color: AppColors.onSurfaceVariant),
                 ),
               ],
             ),
@@ -171,7 +171,7 @@ class SkillsScreen extends ConsumerWidget {
                     'Guardar selección',
                     style: AppTypography.bodyLG.copyWith(
                       color: Colors.white,
-                      fontWeight: FontWeight.bold,
+                      fontWeight: FontWeight.w500,
                     ),
                   ),
           ),
@@ -198,7 +198,7 @@ class _SkillCard extends StatelessWidget {
       margin: const EdgeInsets.only(bottom: 12),
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
-        color: AppColors.surfaceLowest,
+        color: AppColors.surfaceContainerLowest,
         borderRadius: BorderRadius.circular(14),
         boxShadow: [
           BoxShadow(
@@ -224,7 +224,7 @@ class _SkillCard extends StatelessWidget {
             child: Text(
               skill.label,
               style: AppTypography.titleMD
-                  .copyWith(fontWeight: FontWeight.w600, fontSize: 15),
+                  .copyWith(fontWeight: FontWeight.w500, fontSize: 15),
             ),
           ),
           Switch.adaptive(
@@ -237,3 +237,6 @@ class _SkillCard extends StatelessWidget {
     );
   }
 }
+
+
+

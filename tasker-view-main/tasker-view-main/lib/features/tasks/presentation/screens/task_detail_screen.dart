@@ -30,7 +30,7 @@ class _TaskDetailScreenState extends ConsumerState<TaskDetailScreen> {
     final clientAsync = ref.watch(clientProfileProvider(task.clientId));
 
     return Scaffold(
-      backgroundColor: AppColors.surface,
+      backgroundColor: AppColors.background,
       body: Column(
         children: [
           // ── Header ──────────────────────────────────────
@@ -63,7 +63,7 @@ class _TaskDetailScreenState extends ConsumerState<TaskDetailScreen> {
 
   Widget _buildAppBar(AsyncValue clientAsync) {
     return Container(
-      color: AppColors.surface,
+      color: AppColors.background,
       child: SafeArea(
         bottom: false,
         child: Padding(
@@ -77,7 +77,7 @@ class _TaskDetailScreenState extends ConsumerState<TaskDetailScreen> {
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(12),
                   ),
-                  child: const Icon(Icons.arrow_back, color: AppColors.textPrimary),
+                  child: const Icon(Icons.arrow_back, color: AppColors.onSurface),
                 ),
               ),
               const SizedBox(width: 12),
@@ -101,7 +101,7 @@ class _TaskDetailScreenState extends ConsumerState<TaskDetailScreen> {
                           children: [
                             Text(profile.fullName,
                                 style: AppTypography.bodyMD
-                                    .copyWith(fontWeight: FontWeight.w600)),
+                                    .copyWith(fontWeight: FontWeight.w500)),
                           ],
                         ),
                         const SizedBox(width: 8),
@@ -111,7 +111,7 @@ class _TaskDetailScreenState extends ConsumerState<TaskDetailScreen> {
                           child: Text(initials,
                               style: const TextStyle(
                                   color: AppColors.primary,
-                                  fontWeight: FontWeight.bold,
+                                  fontWeight: FontWeight.w500,
                                   fontSize: 12)),
                         ),
                       ],
@@ -137,13 +137,13 @@ class _TaskDetailScreenState extends ConsumerState<TaskDetailScreen> {
                                   errorBuilder: (_, _, _) => Text(initials,
                                       style: const TextStyle(
                                           color: AppColors.primary,
-                                          fontWeight: FontWeight.bold,
+                                          fontWeight: FontWeight.w500,
                                           fontSize: 12))),
                             )
                           : Text(initials,
                               style: const TextStyle(
                                   color: AppColors.primary,
-                                  fontWeight: FontWeight.bold,
+                                  fontWeight: FontWeight.w500,
                                   fontSize: 12)),
                     );
                   },
@@ -201,8 +201,8 @@ class _TaskDetailScreenState extends ConsumerState<TaskDetailScreen> {
             child: Text(
               label,
               style: AppTypography.bodyMD.copyWith(
-                color: isActive ? AppColors.primary : AppColors.textSecondary,
-                fontWeight: isActive ? FontWeight.w600 : FontWeight.w500,
+                color: isActive ? AppColors.primary : AppColors.onSurfaceVariant,
+                fontWeight: isActive ? FontWeight.w500 : FontWeight.w500,
               ),
             ),
           ),
@@ -230,7 +230,7 @@ class _TaskDetailScreenState extends ConsumerState<TaskDetailScreen> {
           // Title
           Text(
             task.title,
-            style: AppTypography.headlineMD.copyWith(fontSize: 26),
+            style: AppTypography.headline.copyWith(fontSize: 26),
           ),
           const SizedBox(height: 8),
 
@@ -238,7 +238,7 @@ class _TaskDetailScreenState extends ConsumerState<TaskDetailScreen> {
           Text(
             task.description,
             style: AppTypography.bodyMD.copyWith(
-              color: AppColors.textSecondary,
+              color: AppColors.onSurfaceVariant,
               height: 1.6,
             ),
           ),
@@ -295,7 +295,7 @@ class _TaskDetailScreenState extends ConsumerState<TaskDetailScreen> {
             ),
             child: const Center(
               child: Icon(Icons.map_outlined,
-                  size: 48, color: AppColors.textSecondary),
+                  size: 48, color: AppColors.onSurfaceVariant),
             ),
           ),
 
@@ -326,7 +326,7 @@ class _TaskDetailScreenState extends ConsumerState<TaskDetailScreen> {
               child: Row(
                 children: [
                   const Icon(Icons.near_me,
-                      size: 14, color: AppColors.textSecondary),
+                      size: 14, color: AppColors.onSurfaceVariant),
                   const SizedBox(width: 8),
                   Expanded(
                     child: Text(
@@ -352,7 +352,7 @@ class _TaskDetailScreenState extends ConsumerState<TaskDetailScreen> {
       case 'published':
       case 'matched':
         label = 'PENDIENTE';
-        color = AppColors.warning;
+        color = AppColors.alert;
         break;
       case 'confirmed':
         label = 'CONFIRMADA';
@@ -369,7 +369,7 @@ class _TaskDetailScreenState extends ConsumerState<TaskDetailScreen> {
         break;
       default:
         label = task.status.toUpperCase();
-        color = AppColors.textSecondary;
+        color = AppColors.onSurfaceVariant;
     }
 
     final timeAgo = _timeAgo(task.publishedAt ?? task.createdAt);
@@ -386,7 +386,7 @@ class _TaskDetailScreenState extends ConsumerState<TaskDetailScreen> {
             label,
             style: AppTypography.labelSM.copyWith(
               color: color,
-              fontWeight: FontWeight.w700,
+              fontWeight: FontWeight.w500,
               letterSpacing: 1.0,
             ),
           ),
@@ -536,7 +536,7 @@ class _TaskDetailScreenState extends ConsumerState<TaskDetailScreen> {
                   child: Text(
                     'Rechazar',
                     style: AppTypography.bodyMD
-                        .copyWith(color: AppColors.textSecondary,
+                        .copyWith(color: AppColors.onSurfaceVariant,
                             fontWeight: FontWeight.w500),
                   ),
                 ),
@@ -572,7 +572,7 @@ class _TaskDetailScreenState extends ConsumerState<TaskDetailScreen> {
                           'Confirmar tarea',
                           style: AppTypography.bodyMD.copyWith(
                               color: Colors.white,
-                              fontWeight: FontWeight.w600),
+                              fontWeight: FontWeight.w500),
                         ),
                 ),
               ),
@@ -614,7 +614,7 @@ class _TaskDetailScreenState extends ConsumerState<TaskDetailScreen> {
                   child: Text(
                     'Agendar',
                     style: AppTypography.bodyMD
-                        .copyWith(color: AppColors.textSecondary,
+                        .copyWith(color: AppColors.onSurfaceVariant,
                             fontWeight: FontWeight.w500),
                   ),
                 ),
@@ -650,7 +650,7 @@ class _TaskDetailScreenState extends ConsumerState<TaskDetailScreen> {
                           'Iniciar tarea',
                           style: AppTypography.bodyMD.copyWith(
                               color: Colors.white,
-                              fontWeight: FontWeight.w600),
+                              fontWeight: FontWeight.w500),
                         ),
                 ),
               ),
@@ -693,7 +693,7 @@ class _TaskDetailScreenState extends ConsumerState<TaskDetailScreen> {
                 : Text(
                     'Generar factura',
                     style: AppTypography.bodyMD.copyWith(
-                        color: Colors.white, fontWeight: FontWeight.w600),
+                        color: Colors.white, fontWeight: FontWeight.w500),
                   ),
           ),
         ),
@@ -764,7 +764,7 @@ class _TaskDetailScreenState extends ConsumerState<TaskDetailScreen> {
   void _showRejectDialog() {
     showDialog(
       context: context,
-      barrierColor: AppColors.textPrimary.withValues(alpha: 0.4),
+      barrierColor: AppColors.onSurface.withValues(alpha: 0.4),
       builder: (ctx) => Dialog(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
         child: Padding(
@@ -795,7 +795,7 @@ class _TaskDetailScreenState extends ConsumerState<TaskDetailScreen> {
               Text(
                 'Estas seguro que quieres rechazar esta tarea? Tiene un potencial de ganancia de: \$${task.agreedPrice?.toStringAsFixed(2) ?? '0.00'}',
                 style: AppTypography.bodyMD
-                    .copyWith(color: AppColors.textSecondary),
+                    .copyWith(color: AppColors.onSurfaceVariant),
                 textAlign: TextAlign.center,
               ),
               const SizedBox(height: 24),
@@ -880,3 +880,6 @@ class _TaskDetailScreenState extends ConsumerState<TaskDetailScreen> {
     return DateFormat('dd MMM', 'es').format(date);
   }
 }
+
+
+

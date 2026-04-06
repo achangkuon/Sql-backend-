@@ -25,7 +25,7 @@ class _ActiveTaskScreenState extends ConsumerState<ActiveTaskScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.surface,
+      backgroundColor: AppColors.background,
       body: Column(
         children: [
           // ── AppBar ──
@@ -51,7 +51,7 @@ class _ActiveTaskScreenState extends ConsumerState<ActiveTaskScreen> {
                           Expanded(
                             child: Text(
                               task.title,
-                              style: AppTypography.headlineMD.copyWith(fontSize: 26),
+                              style: AppTypography.headline.copyWith(fontSize: 26),
                             ),
                           ),
                           const SizedBox(width: 12),
@@ -66,7 +66,7 @@ class _ActiveTaskScreenState extends ConsumerState<ActiveTaskScreen> {
                               'EN PROCESO',
                               style: AppTypography.labelSM.copyWith(
                                 color: AppColors.primary,
-                                fontWeight: FontWeight.w700,
+                                fontWeight: FontWeight.w500,
                                 letterSpacing: 0.8,
                               ),
                             ),
@@ -77,7 +77,7 @@ class _ActiveTaskScreenState extends ConsumerState<ActiveTaskScreen> {
                       Text(
                         task.description,
                         style: AppTypography.bodyMD
-                            .copyWith(color: AppColors.textSecondary, height: 1.6),
+                            .copyWith(color: AppColors.onSurfaceVariant, height: 1.6),
                       ),
 
                       const SizedBox(height: 24),
@@ -145,7 +145,7 @@ class _ActiveTaskScreenState extends ConsumerState<ActiveTaskScreen> {
                 child: Container(
                   padding: const EdgeInsets.all(8),
                   child: const Icon(Icons.arrow_back,
-                      color: AppColors.textPrimary),
+                      color: AppColors.onSurface),
                 ),
               ),
               const SizedBox(width: 12),
@@ -181,7 +181,7 @@ class _ActiveTaskScreenState extends ConsumerState<ActiveTaskScreen> {
             ),
             child: const Center(
               child: Icon(Icons.map_outlined,
-                  size: 48, color: AppColors.textSecondary),
+                  size: 48, color: AppColors.onSurfaceVariant),
             ),
           ),
           // Pin
@@ -320,11 +320,11 @@ class _ActiveTaskScreenState extends ConsumerState<ActiveTaskScreen> {
             child: Row(
               children: [
                 const Icon(Icons.event_repeat_rounded,
-                    color: AppColors.textSecondary, size: 18),
+                    color: AppColors.onSurfaceVariant, size: 18),
                 const SizedBox(width: 10),
                 Text('Reagendar tarea',
                     style: AppTypography.bodyMD
-                        .copyWith(color: AppColors.textSecondary,
+                        .copyWith(color: AppColors.onSurfaceVariant,
                             fontWeight: FontWeight.w500)),
               ],
             ),
@@ -336,11 +336,11 @@ class _ActiveTaskScreenState extends ConsumerState<ActiveTaskScreen> {
             child: Row(
               children: [
                 const Icon(Icons.cancel_outlined,
-                    color: AppColors.textSecondary, size: 18),
+                    color: AppColors.onSurfaceVariant, size: 18),
                 const SizedBox(width: 10),
                 Text('Cancelar tarea',
                     style: AppTypography.bodyMD
-                        .copyWith(color: AppColors.textSecondary,
+                        .copyWith(color: AppColors.onSurfaceVariant,
                             fontWeight: FontWeight.w500)),
               ],
             ),
@@ -382,7 +382,7 @@ class _ActiveTaskScreenState extends ConsumerState<ActiveTaskScreen> {
                 : Text(
                     'Generar factura',
                     style: AppTypography.bodyMD.copyWith(
-                        color: Colors.white, fontWeight: FontWeight.w600),
+                        color: Colors.white, fontWeight: FontWeight.w500),
                   ),
           ),
         ),
@@ -419,7 +419,7 @@ class _ActiveTaskScreenState extends ConsumerState<ActiveTaskScreen> {
   void _showCancelDialog() {
     showDialog(
       context: context,
-      barrierColor: AppColors.textPrimary.withValues(alpha: 0.4),
+      barrierColor: AppColors.onSurface.withValues(alpha: 0.4),
       builder: (ctx) => Dialog(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
         child: Padding(
@@ -444,7 +444,7 @@ class _ActiveTaskScreenState extends ConsumerState<ActiveTaskScreen> {
               Text(
                 'Esta accion no se puede deshacer. La tarea volvera a estar disponible para otros taskers.',
                 style: AppTypography.bodyMD
-                    .copyWith(color: AppColors.textSecondary),
+                    .copyWith(color: AppColors.onSurfaceVariant),
                 textAlign: TextAlign.center,
               ),
               const SizedBox(height: 24),
@@ -504,3 +504,6 @@ class _ActiveTaskScreenState extends ConsumerState<ActiveTaskScreen> {
     }
   }
 }
+
+
+

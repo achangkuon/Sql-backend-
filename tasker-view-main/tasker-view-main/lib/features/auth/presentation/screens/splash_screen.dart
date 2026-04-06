@@ -60,7 +60,7 @@ class _SplashScreenState extends State<SplashScreen> {
               width: 100,
               height: 100,
               decoration: BoxDecoration(
-                color: AppColors.surfaceLowest,
+                color: AppColors.surfaceContainerLowest,
                 borderRadius: BorderRadius.circular(24),
               ),
               child: const Icon(
@@ -71,7 +71,7 @@ class _SplashScreenState extends State<SplashScreen> {
             ),
             const SizedBox(height: 24),
             const CircularProgressIndicator(
-              valueColor: AlwaysStoppedAnimation<Color>(AppColors.surfaceLowest),
+              valueColor: AlwaysStoppedAnimation<Color>(AppColors.surfaceContainerLowest),
               strokeWidth: 2,
             ),
           ],
@@ -80,3 +80,6 @@ class _SplashScreenState extends State<SplashScreen> {
     );
   }
 }
+
+
+

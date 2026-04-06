@@ -30,7 +30,7 @@ class _TasksScreenState extends ConsumerState<TasksScreen> {
         (solicitudesAsync.asData?.value.length ?? 0);
 
     return Scaffold(
-      backgroundColor: AppColors.surface,
+      backgroundColor: AppColors.background,
       body: SafeArea(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -63,13 +63,13 @@ class _TasksScreenState extends ConsumerState<TasksScreen> {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         crossAxisAlignment: CrossAxisAlignment.end,
         children: [
-          Text('Tareas', style: AppTypography.headlineMD.copyWith(fontSize: 28)),
+          Text('Tareas', style: AppTypography.headline.copyWith(fontSize: 28)),
           if (pendingCount > 0)
             Text(
               '$pendingCount PENDIENTES',
               style: AppTypography.labelSM.copyWith(
                 letterSpacing: 1.2,
-                fontWeight: FontWeight.w700,
+                fontWeight: FontWeight.w500,
               ),
             ),
         ],
@@ -121,8 +121,8 @@ class _TasksScreenState extends ConsumerState<TasksScreen> {
             child: Text(
               label,
               style: AppTypography.labelMD.copyWith(
-                color: isActive ? AppColors.primary : AppColors.textSecondary,
-                fontWeight: isActive ? FontWeight.w700 : FontWeight.w500,
+                color: isActive ? AppColors.primary : AppColors.onSurfaceVariant,
+                fontWeight: isActive ? FontWeight.w500 : FontWeight.w500,
                 letterSpacing: 0.5,
               ),
             ),
@@ -164,7 +164,7 @@ class _OngoingView extends StatelessWidget {
     if (activeTasks.isEmpty && solicitudes.isEmpty) {
       return Center(
         child: Text('No tienes tareas activas',
-            style: AppTypography.bodyMD.copyWith(color: AppColors.textSecondary)),
+            style: AppTypography.bodyMD.copyWith(color: AppColors.onSurfaceVariant)),
       );
     }
 
@@ -174,7 +174,7 @@ class _OngoingView extends StatelessWidget {
         // ── Activas ahora ──────────────────────────────────
         if (activeTasks.isNotEmpty) ...[
           Text('Activas ahora',
-              style: AppTypography.titleMD.copyWith(fontWeight: FontWeight.w700)),
+              style: AppTypography.titleMD.copyWith(fontWeight: FontWeight.w500)),
           const SizedBox(height: 12),
           ...activeTasks.map((t) => Padding(
                 padding: const EdgeInsets.only(bottom: 14),
@@ -189,7 +189,7 @@ class _OngoingView extends StatelessWidget {
             children: [
               Text('Nuevas solicitudes',
                   style:
-                      AppTypography.titleMD.copyWith(fontWeight: FontWeight.w700)),
+                      AppTypography.titleMD.copyWith(fontWeight: FontWeight.w500)),
               const SizedBox(width: 8),
               Container(
                 padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
@@ -202,13 +202,13 @@ class _OngoingView extends StatelessWidget {
                   style: const TextStyle(
                       color: Colors.white,
                       fontSize: 11,
-                      fontWeight: FontWeight.w700),
+                      fontWeight: FontWeight.w500),
                 ),
               ),
               const Spacer(),
               Text('Ver todas',
                   style: AppTypography.bodyMD.copyWith(
-                      color: AppColors.primary, fontWeight: FontWeight.w700)),
+                      color: AppColors.primary, fontWeight: FontWeight.w500)),
             ],
           ),
           const SizedBox(height: 12),
@@ -241,7 +241,7 @@ class _PastView extends StatelessWidget {
           return Center(
             child: Text('No tienes tareas pasadas',
                 style: AppTypography.bodyMD
-                    .copyWith(color: AppColors.textSecondary)),
+                    .copyWith(color: AppColors.onSurfaceVariant)),
           );
         }
         return ListView.separated(
@@ -311,7 +311,7 @@ class _TaskCard extends StatelessWidget {
                   Text(
                     task.title,
                     style: AppTypography.titleMD
-                        .copyWith(fontWeight: FontWeight.w600, fontSize: 17),
+                        .copyWith(fontWeight: FontWeight.w500, fontSize: 17),
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
                   ),
@@ -344,14 +344,14 @@ class _TaskCard extends StatelessWidget {
                     '\$${task.agreedPrice?.toStringAsFixed(2) ?? '0.00'} USD',
                     style: AppTypography.titleMD.copyWith(
                       color: const Color(0xFF10B981),
-                      fontWeight: FontWeight.w700,
+                      fontWeight: FontWeight.w500,
                       fontSize: 17,
                     ),
                   ),
                 ] else ...[
                   Text(
                     '\$${task.agreedPrice?.toStringAsFixed(2) ?? '0.00'}',
-                    style: AppTypography.headlineMD.copyWith(
+                    style: AppTypography.headline.copyWith(
                       fontSize: 20,
                       fontWeight: FontWeight.w800,
                     ),
@@ -389,7 +389,7 @@ class _TaskCard extends StatelessWidget {
             style: TextStyle(
               color: Colors.white,
               fontSize: 10,
-              fontWeight: FontWeight.w700,
+              fontWeight: FontWeight.w500,
             ),
           ),
         );
@@ -398,7 +398,7 @@ class _TaskCard extends StatelessWidget {
       case _CardType.past:
         return Row(
           children: [
-            const Icon(Icons.schedule, size: 14, color: AppColors.textSecondary),
+            const Icon(Icons.schedule, size: 14, color: AppColors.onSurfaceVariant),
             const SizedBox(width: 4),
             Text(
               'Duracion: ${task.estimatedDurationLabel.isNotEmpty ? task.estimatedDurationLabel : 'N/A'}',
@@ -486,14 +486,14 @@ class _InfoChip extends StatelessWidget {
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
-          Icon(icon, size: 12, color: AppColors.textSecondary),
+          Icon(icon, size: 12, color: AppColors.onSurfaceVariant),
           const SizedBox(width: 4),
           Text(
             label,
             style: const TextStyle(
               fontSize: 10,
-              fontWeight: FontWeight.w700,
-              color: AppColors.textPrimary,
+              fontWeight: FontWeight.w500,
+              color: AppColors.onSurface,
             ),
             maxLines: 1,
             overflow: TextOverflow.ellipsis,
@@ -567,3 +567,6 @@ class _CountdownBadgeState extends State<_CountdownBadge> {
     );
   }
 }
+
+
+

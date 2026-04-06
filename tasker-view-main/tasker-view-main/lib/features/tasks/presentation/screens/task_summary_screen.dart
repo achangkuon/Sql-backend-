@@ -17,9 +17,9 @@ class TaskSummaryScreen extends ConsumerWidget {
     final reviewAsync = ref.watch(taskReviewProvider(task.id));
 
     return Scaffold(
-      backgroundColor: AppColors.surface,
+      backgroundColor: AppColors.background,
       appBar: AppBar(
-        backgroundColor: AppColors.surface,
+        backgroundColor: AppColors.background,
         elevation: 0,
         leading: IconButton(
           onPressed: () => Navigator.of(context).pop(),
@@ -112,7 +112,7 @@ class TaskSummaryScreen extends ConsumerWidget {
                       'COMPLETADA',
                       style: AppTypography.labelSM.copyWith(
                         color: const Color(0xFF1B5E20),
-                        fontWeight: FontWeight.w600,
+                        fontWeight: FontWeight.w500,
                         letterSpacing: 0.8,
                       ),
                     ),
@@ -145,7 +145,7 @@ class TaskSummaryScreen extends ConsumerWidget {
                         const SizedBox(width: 6),
                         Text('Sincronizado',
                             style: AppTypography.labelSM
-                                .copyWith(color: AppColors.textSecondary)),
+                                .copyWith(color: AppColors.onSurfaceVariant)),
                       ],
                     ),
                   ),
@@ -154,13 +154,13 @@ class TaskSummaryScreen extends ConsumerWidget {
               const SizedBox(height: 16),
               Text(
                 task.title,
-                style: AppTypography.headlineMD.copyWith(fontSize: 22),
+                style: AppTypography.headline.copyWith(fontSize: 22),
               ),
               const SizedBox(height: 4),
               Text(
                 'Servicio finalizado con exito',
                 style: AppTypography.bodyMD
-                    .copyWith(color: AppColors.textSecondary),
+                    .copyWith(color: AppColors.onSurfaceVariant),
               ),
             ],
           ),
@@ -295,13 +295,13 @@ class TaskSummaryScreen extends ConsumerWidget {
                                 errorBuilder: (_, _, _) => Text(initials,
                                     style: const TextStyle(
                                         fontSize: 10,
-                                        fontWeight: FontWeight.bold,
+                                        fontWeight: FontWeight.w500,
                                         color: AppColors.primary))),
                           )
                         : Text(initials,
                             style: const TextStyle(
                                 fontSize: 10,
-                                fontWeight: FontWeight.bold,
+                                fontWeight: FontWeight.w500,
                                 color: AppColors.primary)),
                   ),
                   const SizedBox(width: 8),
@@ -357,7 +357,7 @@ class TaskSummaryScreen extends ConsumerWidget {
                 return Text(
                   'Aun no hay calificacion para esta tarea.',
                   style: AppTypography.bodyMD
-                      .copyWith(color: AppColors.textSecondary),
+                      .copyWith(color: AppColors.onSurfaceVariant),
                 );
               }
               final rating = review['rating'] as int? ?? 0;
@@ -396,7 +396,7 @@ class TaskSummaryScreen extends ConsumerWidget {
                 child: Center(child: LinearProgressIndicator())),
             error: (_, _) => Text('Error al cargar resena',
                 style: AppTypography.bodyMD
-                    .copyWith(color: AppColors.textSecondary)),
+                    .copyWith(color: AppColors.onSurfaceVariant)),
           ),
         ],
       ),
@@ -431,7 +431,7 @@ class TaskSummaryScreen extends ConsumerWidget {
                 style: AppTypography.labelSM.copyWith(
                   color: AppColors.primary,
                   letterSpacing: 1.5,
-                  fontWeight: FontWeight.w600,
+                  fontWeight: FontWeight.w500,
                 ),
               ),
               const SizedBox(height: 16),
@@ -448,7 +448,7 @@ class TaskSummaryScreen extends ConsumerWidget {
                 children: [
                   Text('Total Final',
                       style: AppTypography.bodyMD
-                          .copyWith(fontWeight: FontWeight.w600)),
+                          .copyWith(fontWeight: FontWeight.w500)),
                   Text(
                     '\$${subtotal.toStringAsFixed(2)}',
                     style: AppTypography.titleMD.copyWith(
@@ -471,7 +471,7 @@ class TaskSummaryScreen extends ConsumerWidget {
       children: [
         Text(label,
             style:
-                AppTypography.bodyMD.copyWith(color: AppColors.textSecondary)),
+                AppTypography.bodyMD.copyWith(color: AppColors.onSurfaceVariant)),
         Text(value,
             style: AppTypography.bodyMD.copyWith(fontWeight: FontWeight.w500)),
       ],
@@ -505,7 +505,7 @@ class TaskSummaryScreen extends ConsumerWidget {
             child: Center(
               child: Text('Ver factura',
                   style: AppTypography.bodyMD.copyWith(
-                      color: Colors.white, fontWeight: FontWeight.w600)),
+                      color: Colors.white, fontWeight: FontWeight.w500)),
             ),
           ),
         ),
@@ -530,7 +530,7 @@ class TaskSummaryScreen extends ConsumerWidget {
             child: Center(
               child: Text('Volver al inicio',
                   style: AppTypography.bodyMD.copyWith(
-                      color: AppColors.primary, fontWeight: FontWeight.w600)),
+                      color: AppColors.primary, fontWeight: FontWeight.w500)),
             ),
           ),
         ),
@@ -547,3 +547,6 @@ class TaskSummaryScreen extends ConsumerWidget {
     return '?';
   }
 }
+
+
+
