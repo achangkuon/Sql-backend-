@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'core/theme/app_theme.dart';
+import 'core/security/secure_storage.dart';
 import 'features/auth/presentation/screens/splash_screen.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:intl/date_symbol_data_local.dart';
@@ -19,14 +21,20 @@ void main() async {
   // Initialize date formatting for Spanish locale
   await initializeDateFormatting('es', null);
 
+  // Load environment variables
+  await dotenv.load(fileName: ".env");
+
   // Initialize Supabase BEFORE runApp — the SplashScreen depends on the
   // client being ready to check session state.
   try {
     // Proyecto unificado: compartido con ServiTask App (React Native)
     // para sincronización de datos entre taskers y clientes.
     await Supabase.initialize(
-      url: 'https://qsadtpckaowrkxkbxcxe.supabase.co',
-      anonKey: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFzYWR0cGNrYW93cnt4a2J4Y3hlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzUxNjc5NjcsImV4cCI6MjA5MDc0Mzk2N30.SmiEwt2Z-Vm71dqnkTOSJraFei64Txrv-WHJRegCmEc'
+      url: dotenv.env['SUPABASE_URL'] ?? '',
+      anonKey: dotenv.env['SUPABASE_ANON_KEY'] ?? '',
+      authOptions: FlutterAuthClientOptions(
+        localStorage: SecureLocalStorage(),
+      ),
     );
     debugPrint('✅ Supabase initialized successfully');
 

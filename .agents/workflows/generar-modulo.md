@@ -22,10 +22,14 @@ Este workflow coordina las habilidades especializadas para asegurar que cada cam
 
 4. **Validación Maestro (QA)**
    - **Call Skill**: `validador_maestro`
-   - **Acción**: Realizar un escaneo de cumplimiento estricto sobre el código generado.
-   - **Salida**: Reporte de errores visuales o de seguridad y sugerencia de correcciones.
+   - **Acción**: Realizar un escaneo de cumplimiento estricto de estilos arquitectónicos en el código generado.
 
-5. **Entrega y Confirmación**
+5. **Auditoría de Seguridad (OBLIGATORIO)**
+   - **Call Skill**: `auditor_seguridad`
+   - **Objetivo**: Asegurar que los endpoints, tokens y lógica no incluyan información hardcodeada o vulnerable.
+   - **Salida**: Reporte de brechas o visto bueno para continuar.
+
+6. **Entrega y Confirmación**
    - **Acción**: Mostrar el resultado al usuario y pedir confirmación para aplicar los cambios o realizar ajustes.
 
 ---
