@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../../core/theme/app_colors.dart';
 import '../../../home/presentation/screens/home_screen.dart';
-import '../../../tasks/presentation/screens/tasks_screen.dart';
+import '../../../jobs/presentation/screens/available_jobs_screen.dart';
 import '../../../calendar/presentation/screens/calendar_screen.dart';
 import '../../../business/presentation/screens/business_screen.dart';
 import '../../../profile/presentation/screens/profile_screen.dart';
@@ -19,7 +19,7 @@ class _MainDashboardScreenState extends State<MainDashboardScreen> {
 
   final List<Widget> _screens = [
     const HomeScreen(),
-    const TasksScreen(),
+    const AvailableJobsScreen(),
     const CalendarScreen(),
     const BusinessScreen(),
     const ProfileScreen(),
@@ -92,9 +92,9 @@ class _MainDashboardScreenState extends State<MainDashboardScreen> {
               label: 'INICIO',
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.assignment_outlined),
-              activeIcon: Icon(Icons.assignment_rounded),
-              label: 'TAREAS',
+              icon: Icon(Icons.work_outline_rounded),
+              activeIcon: Icon(Icons.work_rounded),
+              label: 'SOLICITUDES',
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.calendar_today_outlined),
