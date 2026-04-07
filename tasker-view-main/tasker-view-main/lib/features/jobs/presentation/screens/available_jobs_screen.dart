@@ -70,7 +70,7 @@ class _AvailableJobsScreenState extends ConsumerState<AvailableJobsScreen> {
                         child: ListView.separated(
                           padding: const EdgeInsets.fromLTRB(24, 8, 24, 100),
                           itemCount: jobs.length,
-                          separatorBuilder: (_, __) => const SizedBox(height: 12),
+                          separatorBuilder: (_, _) => const SizedBox(height: 12),
                           itemBuilder: (_, i) => _JobCard(
                             job: jobs[i],
                             isAccepting: _acceptingJobId == jobs[i].id,
